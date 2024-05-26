@@ -1,0 +1,65 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+}
+
+.main-menu {
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Set a higher z-index for the main menu to ensure it's displayed on top */
+}
+
+.play-button {
+    position: absolute;
+    left: 0%;
+    transition: transform 0.3s; /* Apply transition to the play button */
+    z-index: 2; /* Set a higher z-index for the play button to ensure it's displayed on top of the main menu */
+}
+
+
+
+.invisible-svg {
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    width: 300px; /* Set the width equal to the play button's width */
+    height: 300px; /* Set the height equal to the play button's height */
+    border-radius: 50%; /* Make it a circle */
+    z-index: 3;
+}
+
+.description {
+    margin-top: 20px;
+    font-size: 1.2em;
+    color: #333;
+}
+
+.game-container {
+    text-align: center;
+}
+.choices {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+.choices button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+.choices button:hover {
+    transform: scale(1.1);
+}
+.result {
+    font-size: 1.5em;
+    margin-top: 20px;
+}

@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM fully loaded and parsed');
 
     function hoverPlayButton() {
         console.log('Hover function called');
@@ -41,6 +42,16 @@ document.addEventListener('DOMContentLoaded', () => {
         mainImage.src = 'assets/Images/RPSLS.png';
     }
 
+    function selectChoice(choice) {
+        console.log(`Choice selected: ${choice}`);
+        const playerChoice = choice;
+        const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+        const resultText = getResult(playerChoice, computerChoice);
+        document.getElementById('result').textContent = resultText;
+        updateScore(resultText);
+        checkWinner();
+    }
+
     // Add event listeners to the invisible SVG elements
     const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 
@@ -49,6 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (svgElement) {
             svgElement.addEventListener('mouseenter', () => hoverChoice(choice));
             svgElement.addEventListener('mouseleave', unhoverChoice);
+            svgElement.addEventListener('click', () => selectChoice(choice));
         } else {
             console.log(`${choice}SVG not found`);
         }
@@ -58,24 +70,6 @@ document.addEventListener('DOMContentLoaded', () => {
     let playerScore = 0;
     let computerScore = 0;
     let gamesPlayed = 0;
-
-    // Add event listeners to each choice button (assuming buttons exist)
-    const buttons = document.querySelectorAll('.choices button');
-    if (buttons.length > 0) {
-        buttons.forEach(button => {
-            button.addEventListener('click', () => {
-                console.log(`Button ${button.id} clicked`);
-                const playerChoice = button.id;
-                const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-                const resultText = getResult(playerChoice, computerChoice);
-                document.getElementById('result').textContent = resultText;
-                updateScore(resultText);
-                checkWinner();
-            });
-        });
-    } else {
-        console.log('No choice buttons found');
-    }
 
     function getResult(player, computer) {
         if (player === computer) {

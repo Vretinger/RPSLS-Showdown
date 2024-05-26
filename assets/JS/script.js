@@ -17,6 +17,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    function updateMainImage(imageSrc) {
+        document.getElementById('mainImage').src = imageSrc;
+    }
+
+
     // Check if PlaySVG exists before adding event listeners
     const PlaySVG = document.getElementById('PlaySVG');
     if (PlaySVG) {
@@ -46,10 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log(`Choice selected: ${choice}`);
         const playerChoice = choice;
         const computerChoice = choices[Math.floor(Math.random() * choices.length)];
-        const resultText = getResult(playerChoice, computerChoice);
-        document.getElementById('result').textContent = resultText;
-        updateScore(resultText);
-        checkWinner();
+        
     }
 
     // Add event listeners to the invisible SVG elements
@@ -60,11 +62,52 @@ document.addEventListener('DOMContentLoaded', () => {
         if (svgElement) {
             svgElement.addEventListener('mouseenter', () => hoverChoice(choice));
             svgElement.addEventListener('mouseleave', unhoverChoice);
-            svgElement.addEventListener('click', () => selectChoice(choice));
+            svgElement.addEventListener('click', () => {
+                selectChoice(choice);
+                playerChooses(choice);
+            });
         } else {
             console.log(`${choice}SVG not found`);
         }
     });
+
+    
+    function runSlotMachine() {
+        var reel = document.querySelector('.reel');
+        reel.classList.add('spin-animation');
+
+        setTimeout(function() {
+            reel.classList.remove('spin-animation');
+            var computerChoice = getRandomComputerChoice(); // Implement this function to get computer's choice
+            updateMainImage(getImageSrcForChoice(computerChoice)); // Update main image with computer's choice
+            document.getElementById('computerChoice').innerText = "Computer's Choice: " + computerChoice; // Display computer's choice
+
+            const resultText = getResult(playerChoice, computerChoice);
+        document.getElementById('result').textContent = resultText;
+        updateScore(resultText);
+        checkWinner();
+            handleResultAfterSlotMachine(computerChoice);
+        }, 5000); // Change 5000 to the duration of your slot machine animation in milliseconds
+    }
+    
+    function updatePlayerChoiceImage(choice) {
+        var playerChoiceImage = document.getElementById('playerChoiceIMG');
+        playerChoiceImage.src = `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
+        playerChoiceImage.alt = choice;
+    }
+    
+    function playerChooses(choice) {
+        updatePlayerChoiceImage(choice);
+        document.getElementById('playerChoice').innerText = "Player's Choice: " + choice;
+        // Hide the main image
+        const mainImage = document.getElementById('mainImage');
+        mainImage.style.display = 'none';
+        // Make the slot machine visible
+        const slotMachine = document.querySelector('.slot-machine');
+        slotMachine.style.visibility = 'visible';
+        // Run the slot machine animation
+        runSlotMachine();
+    }
 
     // Initialize score variables
     let playerScore = 0;

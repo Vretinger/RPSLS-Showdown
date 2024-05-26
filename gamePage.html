@@ -3,22 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RPSLS</title>
+    <title>Rock, Paper, Scissors, Lizard, Spock</title>
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body>
     <div class="game-container">
         <h1>Rock, Paper, Scissors, Lizard, Spock</h1>
-        <div class="choices">
-            <!-- Buttons for each choice -->
-            <button id="rock">Rock</button>
-            <button id="paper">Paper</button>
-            <button id="scissors">Scissors</button>
-            <button id="lizard">Lizard</button>
-            <button id="spock">Spock</button>
+        <div class="main-image-container">
+            <img src="assets/Images/RPSLS.png" alt="RPSLS" id="mainImage">
+            <svg id="rockSVG" class="invisible-svg" viewBox="0 0 100 100" style="top: 740px; left: 1320px; width: 180px; height: 180px;">
+                <circle cx="50" cy="50" r="50"></circle>
+            </svg>
+            <svg id="paperSVG" class="invisible-svg" viewBox="0 0 100 100" style="top: 10px; left: 120px;">
+                <circle cx="50" cy="50" r="50"></circle>
+            </svg>
+            <svg id="scissorsSVG" class="invisible-svg" viewBox="0 0 100 100" style="top: 10px; left: 230px;">
+                <circle cx="50" cy="50" r="50"></circle>
+            </svg>
+            <svg id="lizardSVG" class="invisible-svg" viewBox="0 0 100 100" style="top: 120px; left: 65px;">
+                <circle cx="50" cy="50" r="50"></circle>
+            </svg>
+            <svg id="spockSVG" class="invisible-svg" viewBox="0 0 100 100" style="top: 120px; left: 175px;">
+                <circle cx="50" cy="50" r="50"></circle>
+            </svg>
         </div>
-        <!-- Area to display the result -->
         <div class="result" id="result"></div>
+        <div class="scores">
+            <p id="playerScore">Player Score: 0</p>
+            <p id="computerScore">Computer Score: 0</p>
+        </div>
     </div>
     <script src="assets/JS/script.js"></script>
 </body>

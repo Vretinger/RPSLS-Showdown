@@ -103,6 +103,44 @@ body {
     margin-top: 20px;
 }
 
+.choice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.divider-image {
+    width: 200px !important; /* Adjust width as needed */
+    height: auto !important; /* Maintain aspect ratio */
+}
+
+
+
+.choice-text {
+    font-size: 1.5em; /* Adjust font size for choice text */
+    font-weight: bold; /* Make the text bold */
+    color: #333; /* Set the text color */
+}
+
+.divider-image {
+    width: 600px; /* Adjust image width as needed */
+    height: auto; /* Maintain aspect ratio */
+}
+
+#game-container {
+    display: none; /* Hide the game container by default */
+    justify-content: space-around; /* Add space around the elements */
+    align-items: center; /* Center vertically */
+}
+
+
+#slot-machine-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-left: 20px; /* Adjust margin to create space between player and slot machine */
+}
+
 .slot-machine {
     visibility: hidden;
     position: relative;
@@ -116,22 +154,24 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 500%; /* Adjust based on the number of images */
+    height: 1500%; /* Adjust based on the number of images */
     animation: spin-reel 5s infinite; /* Adjust animation duration as needed */
 }
 
 .spin-animation {
-    animation: spin-reel 5s; /* Adjust animation duration as needed */
+    animation: spin-reel; /* Adjust animation duration as needed */
 }
 
 @keyframes spin-reel {
     0% {
-        transform: translateY(0);
+        transform: translateY(-80%); /* Start from the top position */
     }
     100% {
-        transform: translateY(-80%); /* Adjust the value to control the spinning speed */
+        transform: translateY(var(--index)); /* Use a CSS variable for the translateY value */
     }
 }
+
+
 
 #mainImage {
     display: block; /* Initially visible */

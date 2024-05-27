@@ -8,10 +8,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-.game-container {
-    text-align: center;
-}
-
 .main-image-container {
     position: relative;
     display: inline-block;
@@ -59,6 +55,20 @@ body {
 
 .game-container {
     text-align: center;
+    display: flex;
+    justify-content: space-between; /* Adjusts the space between items */
+    align-items: flex-start; /* Aligns items to the start of the container */
+    gap: 20px; /* Space between the two divs */
+}
+
+#player-choice-container, #slot-machine-container {
+    flex: 1; /* Each div will take up an equal amount of space */
+}
+
+#player-choice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #titleText {
@@ -70,6 +80,8 @@ body {
     z-index: 0; /* Set the title text behind the main image */
     transform: scale(1.5);
 }
+
+
 
 .choices {
     display: flex;

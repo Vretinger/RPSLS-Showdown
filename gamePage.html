@@ -4,17 +4,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RPSLS</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
-<body>
+<body style="background-image: url('assets/Images/GameBackground.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
+    <div class="container">
+        
     <div id="game-container">
+        <div id="invisible-block2"></div>    
         <div class="choice-container">
             <img id="playerChoiceIMG" src="" alt="Player's Choice">
-            <div id="playerChoice" class="choice-text">Player's Choice: </div>
+            <div id="playerChoice" class="choice-textPlayer">Player's Choice: </div>
         </div>
+        
         <img src="assets/Images/VSIcon.png" alt="Image" class="divider-image">
         <div class="choice-container">            
-        </div>
         <div id="slot-machine-and-computer">
             <div id="slot-machine-container" class="slot-machine">
             <div class="reel">
@@ -35,9 +39,13 @@
                     <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
             </div>
         </div>
-        <div id="computerChoice" class="choice-text">Computer's Choice: </div>
+        <div id="computerChoice" class="choice-textComputer">Computer's Choice: </div>
     </div>
-    </div>
+        </div>
+        
+</div>
+<div id="invisible-block1"></div>
+</div>
 
     
         <div class="main-image-container">
@@ -59,20 +67,17 @@
                 <circle cx="50" cy="50" r="50"></circle>
             </svg>
         </div>
-        <div class="result" id="result"></div>
-        <div class="scores">
-            <p id="playerScore">Player Score: 0</p>
-            <p id="computerScore">Computer Score: 0</p>
+        <div id="score-container" class="scores">
+            <div class="result" id="result"></div>
+            <p id="playerScore" class="scoresPlayer">Player Score: 0</p>
+            <p id="computerScore" class="scoresComputer">Computer Score: 0</p>
+            <button id="nextRoundButton" class="next-round-button">Play Next Round</button>
         </div>
+        
     </div>
     <div id="computerChoice" class="choice"></div>
 </div>
-<div class="result" id="result"></div>
-<div class="scores">
-    <p id="playerScore">Player Score: 0</p>
-    <p id="computerScore">Computer Score: 0</p>
-</div>
-</div>
+<img src="assets/Images/RPSLSTittleText.png" class="under-image" alt="Your Image">
     <script src="assets/JS/script.js"></script>
 </body>
 </html>

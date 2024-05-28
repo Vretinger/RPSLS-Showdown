@@ -23,9 +23,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    function updateMainImage(imageSrc) {
-        document.getElementById('mainImage').src = imageSrc;
-    }
 
     // Check if PlaySVG exists before adding event listeners
     const PlaySVG = document.getElementById('PlaySVG');
@@ -53,12 +50,15 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function selectChoice(choice) {
+        
         console.log(`Choice selected: ${choice}`);
         const playerChoice = choice;
         const computerChoiceIndex = Math.floor(Math.random() * choices.length);
         const computerChoice = choices[computerChoiceIndex];
         document.getElementById('game-container').style.display = 'flex';
+        document.getElementById('invisible-block1').remove();
         playerChooses(playerChoice, computerChoice); // Pass both player's and computer's choices
+        
     }
 
     // Add event listeners to the invisible SVG elements
@@ -69,16 +69,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (svgElement) {
             svgElement.addEventListener('mouseenter', () => hoverChoice(choice));
             svgElement.addEventListener('mouseleave', unhoverChoice);
-            svgElement.addEventListener('click', () => {
+            svgElement.addEventListener('click', () => {        
+                document.querySelector('.under-image').style.left = '-805px';       
                 selectChoice(choice);
-                playerChooses(choice);              
+                playerChooses(choice);            
             });
         } else {
             console.log(`${choice}SVG not found`);
         }
     });
 
-    function getImageSrcForChoice(choice) {
+   function getImageSrcForChoice(choice) {
         return `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
     }
     
@@ -88,7 +89,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!slotMachineRunning) {
             var reel = document.querySelector('.reel');
             var translateYValue;
-    
+
             switch (choices[computerChoiceIndex]) {
                 case 'lizard':
                     translateYValue = '-0%';
@@ -108,43 +109,31 @@ document.addEventListener('DOMContentLoaded', () => {
                 default:
                     translateYValue = '-0%';
             }
-    
+
             reel.style.setProperty('--index', translateYValue); // Set the value of the CSS variable
             reel.style.animation = `spin-reel 5s forwards`;
-    
+
             var duration = 5000;
-    
+
             setTimeout(function() {
                 var computerChoice = choices[computerChoiceIndex];
-                updateMainImage(getImageSrcForChoice(computerChoice));
                 document.getElementById('computerChoice').innerText = "Computer's Choice: " + computerChoice;
-    
                 const resultText = getResult(playerChoice, computerChoice);
                 document.getElementById('result').textContent = resultText;
                 updateScore(resultText);
                 checkWinner();
                 slotMachineRunning = false;
             }, duration);
-    
+
             slotMachineRunning = true;
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
+ 
     function playerChooses(playerChoice, computerChoice) {
         updatePlayerChoiceImage(playerChoice);
         document.getElementById('playerChoice').innerText = "Player's Choice: " + playerChoice;
         document.getElementById('computerChoice').innerText = "Computer's Choice: " + computerChoice;
-    
+
         // Check if the slot machine animation is not already running
         if (!slotMachineRunning) {
             // Hide the main image
@@ -165,13 +154,22 @@ document.addEventListener('DOMContentLoaded', () => {
     let gamesPlayed = 0;
 
     function getResult(player, computer) {
+        const resultElement = document.getElementById('result');
+        let resultText;
+    
         if (player === computer) {
-            return `It's a tie! Both chose ${player}.`;
+            resultText = `It's a tie! Both chose ${player}.`;
+            resultElement.style.color = 'orange'; // Draw
         } else if (results[player] && results[player][computer]) {
-            return `You win! ${player.charAt(0).toUpperCase() + player.slice(1)} ${results[player][computer]} ${computer}.`;
+            resultText = `You win! ${player.charAt(0).toUpperCase() + player.slice(1)} ${results[player][computer]} ${computer}.`;
+            resultElement.style.color = 'green'; // Win
         } else {
-            return `You lose! ${computer.charAt(0).toUpperCase() + computer.slice(1)} ${results[computer][player]} ${player}.`;
+            resultText = `You lose! ${computer.charAt(0).toUpperCase() + computer.slice(1)} ${results[computer][player]} ${player}.`;
+            resultElement.style.color = 'red'; // Lose
         }
+    
+        resultElement.textContent = resultText;
+        return resultText;
     }
 
     function updateScore(resultText) {
@@ -187,21 +185,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkWinner() {
         if (playerScore === 5) {
-            alert('Congratulations! You won the best of 9 series!');
-            resetGame();
+            alert('Congratulations! You won!');
         } else if (computerScore === 5) {
-            alert('Sorry, the computer won the best of 9 series.');
-            resetGame();
-        } else if (gamesPlayed === 9) {
-            if (playerScore > computerScore) {
-                alert('Congratulations! You won the best of 9 series!');
-            } else if (computerScore > playerScore) {
-                alert('Sorry, the computer won the best of 9 series.');
-            } else {
-                alert("It's a tie in the best of 9 series!");
-            }
-            resetGame();
-        }
+            alert('Sorry, the computer won');
+        } 
     }
 
     function resetGame() {

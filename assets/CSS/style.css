@@ -8,6 +8,37 @@ body {
     font-family: Arial, sans-serif;
 }
 
+#invisible-block1 {
+    width: 975px; /* Adjust the width to create space on both sides */
+    height: 0; /* No height, invisible */
+    margin-top: 100px; /* Adjust margin as needed */
+}
+
+#invisible-block2 {
+    width: 985px; /* Adjust the width to create space on both sides */
+    height: 0; /* No height, invisible */
+    margin-top: 100px; /* Adjust margin as needed */
+}
+
+
+
+.game-container {
+    width: 100%;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.under-image {
+    position: relative; /* Maintain relative positioning */
+    top: -90px; /* Adjust top position as needed */
+    left: -800px; /* Adjust left position as needed */
+    z-index: 0; /* Ensure it's displayed under other images */
+    /* Add other styling properties as needed */
+}
+
 .main-image-container {
     position: relative;
     display: inline-block;
@@ -26,13 +57,80 @@ body {
     z-index: 2; /* Set a higher z-index for the play button to ensure it's displayed on top of the main menu */
 }
 
-
-.scores {
-    margin-top: 20px;
-    font-size: 1.2em;
-    color: #333;
+#score-container {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
 }
 
+#score-container {
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center align items horizontally */
+}
+
+.scoresComputer {
+    font-family: 'Permanent Marker', cursive; /* Graffiti font */
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #ff00aa; /* Bright blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+    display: inline-block; /* Ensure the text wraps correctly */
+    margin: 20px 0; /* Increase margin for more spacing around the element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
+}
+
+.scoresPlayer {
+    font-family: 'Permanent Marker', cursive; /* Graffiti font */
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #00bfff; /* Bright blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+    display: inline-block; /* Ensure the text wraps correctly */
+    margin: 20px 0; /* Increase margin for more spacing around the element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
+}
+
+.result {
+    font-family: 'Permanent Marker', cursive; /* Graffiti font */
+    font-size: 2.5em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #fbff00; /* Bright yellow color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+    display: inline-block; /* Ensure the text wraps correctly */
+    margin: 20px 0; /* Increase margin for more spacing around the element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
+    text-align: center; /* Center the text */
+}
+
+.next-round-button {
+    font-family: 'Permanent Marker', cursive; /* Graffiti font */
+    font-size: 1.5em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #ffffff; /* White text color */
+    background-color: #ff5733; /* Bright button color */
+    border: none; /* Remove default border */
+    padding: 10px 20px; /* Padding for size */
+    margin: 20px 0; /* Margin for spacing */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for interactions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+}
+
+.next-round-button:hover {
+    background-color: #e74c3c; /* Darker color on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
 
 .invisible-svg {
     position: absolute;
@@ -53,13 +151,7 @@ body {
     color: #333;
 }
 
-.game-container {
-    text-align: center;
-    display: flex;
-    justify-content: space-between; /* Adjusts the space between items */
-    align-items: flex-start; /* Aligns items to the start of the container */
-    gap: 20px; /* Space between the two divs */
-}
+
 
 #player-choice-container, #slot-machine-container {
     flex: 1; /* Each div will take up an equal amount of space */
@@ -70,17 +162,6 @@ body {
     flex-direction: column;
     align-items: center;
 }
-
-#titleText {
-    display: block;
-    position: absolute; /* Position the title text absolutely */
-    bottom: -35%; /* Align the title text to the bottom */
-    left: -35%; /* Center the title text horizontally */
-    transform: translateX(-50%); /* Adjust for centering */
-    z-index: 0; /* Set the title text behind the main image */
-    transform: scale(1.5);
-}
-
 
 
 .choices {
@@ -98,28 +179,46 @@ body {
 .choices button:hover {
     transform: scale(1.1);
 }
-.result {
-    font-size: 1.5em;
-    margin-top: 20px;
-}
+
 
 .choice-container {
     display: flex;
     flex-direction: column;
     align-items: center;
+    width: 200px
 }
 
 .divider-image {
-    width: 200px !important; /* Adjust width as needed */
-    height: auto !important; /* Maintain aspect ratio */
+    width: 200px !important; 
+    height: 200px !important; 
 }
 
 
 
-.choice-text {
-    font-size: 1.5em; /* Adjust font size for choice text */
-    font-weight: bold; /* Make the text bold */
-    color: #333; /* Set the text color */
+.choice-textComputer {
+    font-family: 'Permanent Marker', cursive; /* Graffiti font */
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #ff00aa; /* Bright blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+    display: inline-block; /* Ensure the text wraps correctly */
+    margin: 10px 0; /* Margin for spacing around the element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
+}
+
+.choice-textPlayer {
+    font-family: 'Permanent Marker', cursive; /* Graffiti font */
+    font-size: 2em; /* Larger font size for emphasis */
+    font-weight: bold; /* Bold text */
+    color: #00bfff; /* Bright blue color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+    display: inline-block; /* Ensure the text wraps correctly */
+    margin: 10px 0; /* Margin for spacing around the element */
+    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
+    text-transform: uppercase; /* Uppercase text */
+    letter-spacing: 2px; /* Spacing between letters */
 }
 
 .divider-image {
@@ -130,7 +229,6 @@ body {
 #game-container {
     display: none; /* Hide the game container by default */
     justify-content: space-around; /* Add space around the elements */
-    align-items: center; /* Center vertically */
 }
 
 

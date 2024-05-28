@@ -35,7 +35,7 @@ body {
     position: relative; /* Maintain relative positioning */
     top: -90px; /* Adjust top position as needed */
     left: -800px; /* Adjust left position as needed */
-    z-index: 0; /* Ensure it's displayed under other images */
+    z-index: -1; /* Ensure it's displayed under other images */
     /* Add other styling properties as needed */
 }
 

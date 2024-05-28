@@ -7,6 +7,8 @@ function updatePlayerChoiceImage(choice) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
+   
+
     function hoverPlayButton() {
         console.log('Hover function called');
         const playButton = document.getElementById('playButton');
@@ -56,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const computerChoiceIndex = Math.floor(Math.random() * choices.length);
         const computerChoice = choices[computerChoiceIndex];
         document.getElementById('game-container').style.display = 'flex';
-        document.getElementById('invisible-block1').remove();
+        document.getElementById('invisible-block1').style.display = 'none';
         playerChooses(playerChoice, computerChoice); // Pass both player's and computer's choices
         
     }
@@ -70,7 +72,8 @@ document.addEventListener('DOMContentLoaded', () => {
             svgElement.addEventListener('mouseenter', () => hoverChoice(choice));
             svgElement.addEventListener('mouseleave', unhoverChoice);
             svgElement.addEventListener('click', () => {        
-                document.querySelector('.under-image').style.left = '-805px';       
+                document.querySelector('.under-image').style.left = '-805px';  
+                document.getElementById('invisible-block2').style.display = 'block';     
                 selectChoice(choice);
                 playerChooses(choice);            
             });
@@ -129,6 +132,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
  
+
     function playerChooses(playerChoice, computerChoice) {
         updatePlayerChoiceImage(playerChoice);
         document.getElementById('playerChoice').innerText = "Player's Choice: " + playerChoice;
@@ -172,7 +176,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return resultText;
     }
 
+
     function updateScore(resultText) {
+        showResults();
+        showNextRoundButton();
         if (resultText.startsWith('You win')) {
             playerScore++;
         } else if (resultText.startsWith('You lose')) {
@@ -190,6 +197,70 @@ document.addEventListener('DOMContentLoaded', () => {
             alert('Sorry, the computer won');
         } 
     }
+
+    function hovernextRoundButton() {
+        console.log('Hover function called');
+        const nextRoundButton = document.getElementById('nextRoundButton');
+        if (nextRoundButton) {
+            nextRoundButton.style.transform = 'scale(1.1)';
+        }
+    }
+
+    function unhovernextRoundButton() {
+        console.log('Unhover function called');
+        const nextRoundButton = document.getElementById('nextRoundButton');
+        if (nextRoundButton) {
+            nextRoundButton.style.transform = 'scale(1)';
+        }
+    }
+
+    function showNextRoundButton() {
+        document.getElementById('nextRoundButton').style.display = 'block';
+        console.log("test");
+    }
+
+    function hideNextRoundButton() {
+        document.getElementById('nextRoundButton').style.display = 'none';
+    }
+
+    function showResults() {
+        const resultContainer = document.getElementById('resultContainer');
+        if (resultContainer) {
+            resultContainer.style.display = 'block';
+        } else {
+            console.error("Result container not found.");
+        }
+    }
+
+    function hideResults() {
+        document.getElementById('resultContainer').style.display = 'none';
+    }
+
+    const nextRoundButton = document.getElementById('nextRoundButton');
+    if (nextRoundButton) {
+        nextRoundButton.addEventListener('mouseenter', hovernextRoundButton);
+        nextRoundButton.addEventListener('mouseleave', unhovernextRoundButton);
+    } else {
+        console.log('Next Round Button not found');
+    }
+
+    document.getElementById('nextRoundButton').addEventListener('click', function() {
+        NextGame();
+    });
+
+    function NextGame() {
+        document.querySelector('.under-image').style.left = '-800px'; 
+        document.getElementById('invisible-block1').style.display = 'block';
+        document.getElementById('invisible-block2').style.display = 'none';
+        document.getElementById('game-container').style.display = 'none';
+        const mainImage = document.getElementById('mainImage');
+        mainImage.style.display = 'inline-block';
+    
+        // Ensure that hideResults and hideNextRoundButton functions are called correctly
+        document.getElementById('result').style.display = 'none'
+        hideNextRoundButton();
+    }
+
 
     function resetGame() {
         playerScore = 0;

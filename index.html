@@ -6,14 +6,16 @@
     <title>Main Menu</title>
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
-<body>
+<body style="background-image: url('assets/Images/MainMenuBGI2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
     <div class="main-menu">
-        <img src="assets/Images/RPSLSLogo.png" alt="Logo" class="main-menu">
-        <img src="assets/Images/RPSLSLogoButton.png" alt="Play" class="play-button" id="playButton">
+        <div class="logo-container">
+            <img src="assets/Images/RPSLSLogo.png" alt="Logo" class="main-menuImg">
+            <img src="assets/Images/RPSLSLogoButton.png" alt="Play" class="play-button" id="playButton">
+        </div>
         <svg id="PlaySVG" class="invisible-svg" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="50" fill="transparent"></circle>
         </svg>
-        <p class="description">Welcome to the game! Click the play button to start your adventure.</p>
+        <button class="instructions-button" onclick="showInstructions()">Instructions</button>
     </div>
     <script src="assets/JS/script.js"></script>
 </body>

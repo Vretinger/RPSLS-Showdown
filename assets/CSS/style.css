@@ -1,11 +1,9 @@
 body {
+    margin: 0;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    margin: 0;
-    background-image: url('assets/Images/GameBackground.jpg');
-    font-family: Arial, sans-serif;
 }
 
 #invisible-block1 {
@@ -50,12 +48,6 @@ body {
     z-index: 1; /* Set a higher z-index for the main menu to ensure it's displayed on top */
 }
 
-.play-button {
-    position: absolute;
-    left: 0%;
-    transition: transform 0.3s; /* Apply transition to the play button */
-    z-index: 2; /* Set a higher z-index for the play button to ensure it's displayed on top of the main menu */
-}
 
 #score-container {
     position: absolute;
@@ -117,8 +109,9 @@ body {
     font-weight: bold; /* Bold text */
     color: #ffffff; /* White text color */
     background-color: #ff5733; /* Bright button color */
-    border: none; /* Remove default border */
-    padding: 10px 20px; /* Padding for size */
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
     margin: 20px 0; /* Margin for spacing */
     cursor: pointer; /* Pointer cursor on hover */
     transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for interactions */
@@ -144,6 +137,7 @@ body {
     z-index: 3;
     fill: rgba(0, 0, 255, 0); 
 }
+
 
 .description {
     margin-top: 20px;
@@ -193,7 +187,70 @@ body {
     height: 200px !important; 
 }
 
+.main-menu {
+    text-align: center;
+}
 
+.play-button {
+    position: absolute;
+    margin-bottom: 20px; /* Add space between play image and button */
+    left: 0%;
+    transition: transform 0.3s; /* Apply transition to the play button */
+    z-index: 2; /* Set a higher z-index for the play button to ensure it's displayed on top of the main menu */
+}
+
+
+.instructions-button {
+    position: absolute; /* Position the button absolutely */
+    top: 800px; /* Adjust the top value to position the button vertically */
+    left: 50%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust to center the button perfectly */
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+.instructions-button:hover {
+    transform: translateX(-50%) scale(1.1); /* Scale up by 10% on hover */
+}
+
+.back-button {
+    position: absolute; /* Position the button absolutely */
+    top: 100px; /* Adjust the top value to position the button vertically */
+    left: 10%; /* Center the button horizontally */
+    transform: translateX(-50%); /* Adjust to center the button perfectly */
+    font-family: 'Permanent Marker', cursive;
+    font-size: 2em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+.back-button:hover {
+    transform: translateX(-50%) scale(1.1); /* Scale up by 10% on hover */
+}
 
 .choice-textComputer {
     font-family: 'Permanent Marker', cursive; /* Graffiti font */
@@ -270,6 +327,43 @@ body {
 }
 
 
+.game-over-body {
+    font-family: 'Permanent Marker', cursive;
+    text-align: center;
+    background-color: #282c34;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.game-over-body h1 {
+    font-size: 3em;
+    margin: 20px 0;
+}
+
+.game-over-body p {
+    font-size: 1.5em;
+    margin: 20px 0;
+}
+
+.end-game-button {
+    font-size: 1.5em;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #00bfff;
+    border: none;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+    transition: transform 0.3s ease-in-out;
+}
+
+.end-game-button:hover {
+    transform: scale(1.1);
+}
 
 #mainImage {
     display: block; /* Initially visible */

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Over</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/style.css">
+</head>
+<body class="game-over-body">
+    <h1>Game Over</h1>
+    <p id="endGameMessage">Thank you for playing!</p>
+    <button class="end-game-button" onclick="restartGame()">Play Again</button>
+
+    <script>
+        function restartGame() {
+            window.location.href = 'gamePage.html'; // Adjust this to the actual game page
+        }
+
+        // Function to get query parameter from URL
+        function getQueryParam(param) {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get(param);
+        }
+
+        // Display the winner message
+        const winner = getQueryParam('winner');
+        if (winner) {
+            document.getElementById('endGameMessage').textContent = `Congratulations! ${winner} won the game!`;
+        } else {
+            document.getElementById('endGameMessage').textContent = 'Thank you for playing!';
+        }
+    </script>
+</body>
+</html>

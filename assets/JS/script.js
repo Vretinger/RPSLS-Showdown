@@ -7,7 +7,9 @@ function updatePlayerChoiceImage(choice) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
-   
+    function instructions() {
+        window.location.href = 'instructions.html';
+    }
 
     function hoverPlayButton() {
         console.log('Hover function called');
@@ -86,6 +88,16 @@ document.addEventListener('DOMContentLoaded', () => {
         return `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
     }
     
+    document.getElementById('backButton').addEventListener('click', function() {
+        confirmBack();
+    });
+
+    function confirmBack() {
+        if (confirm("Are you sure you want to go back?")) {
+            window.location.href = 'index.html'; // This goes back to the previous page
+        }
+    }
+
 
     let slotMachineRunning = false; // Flag to track whether the slot machine animation is running
     function runSlotMachine(computerChoiceIndex, playerChoice) {
@@ -136,7 +148,9 @@ document.addEventListener('DOMContentLoaded', () => {
     function playerChooses(playerChoice, computerChoice) {
         updatePlayerChoiceImage(playerChoice);
         document.getElementById('playerChoice').innerText = "Player's Choice: " + playerChoice;
-        document.getElementById('computerChoice').innerText = "Computer's Choice: " + computerChoice;
+        document.getElementById('computerChoice').innerText = 
+        computerChoice !== undefined ? "Computer's Choice: " + computerChoice : "Computer's Choice: picking...";
+
 
         // Check if the slot machine animation is not already running
         if (!slotMachineRunning) {
@@ -192,10 +206,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkWinner() {
         if (playerScore === 5) {
-            alert('Congratulations! You won!');
+            window.location.href = 'endGamePage.html?winner=Player';
         } else if (computerScore === 5) {
-            alert('Sorry, the computer won');
-        } 
+            window.location.href = 'endGamePage.html';
+        }
     }
 
     function hovernextRoundButton() {

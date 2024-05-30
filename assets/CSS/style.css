@@ -37,6 +37,65 @@ body {
     /* Add other styling properties as needed */
 }
 
+.instruction-container {
+    width: 50%; /* Adjust width as needed */
+    height: 80%; /* Add margin to center and create space above and below */
+    padding: 20px;
+    background: rgba(128, 128, 128, 0.8); /* Gray with opacity */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
+    overflow-y: auto; /* Makes the content scrollable */
+    color: #fff; /* Text color */
+}
+
+.instruction-container h2 {
+    font-size: 40px;
+}
+
+.instruction-container p {
+    font-size: 30px;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.instructions {
+    width: 50%; /* Adjust width as needed */
+    font-size: 30px;
+}
+
+.image-container {
+    width: 50%; /* Adjust width as needed */
+}
+
+.instruction-image {
+    width: 100%; /* Adjust image width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.choices {
+    margin-top: 20px;
+}
+
+.choice {
+    text-align: center;
+    margin: 20px;
+}
+
+.choice img {
+    width: 150px; /* Adjust image size as needed */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow to images */
+}
+
+.choice p {
+    margin-top: 5px;
+    font-weight: bold;
+}
+
 .main-image-container {
     position: relative;
     display: inline-block;

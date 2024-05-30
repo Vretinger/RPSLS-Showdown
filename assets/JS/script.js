@@ -7,8 +7,14 @@ function updatePlayerChoiceImage(choice) {
 document.addEventListener('DOMContentLoaded', () => {
     console.log('DOM fully loaded and parsed');
 
-    function instructions() {
-        window.location.href = 'instructions.html';
+    const Instructions = document.getElementById('instructions');
+    if (Instructions) {
+        Instructions.addEventListener('click', function() {
+            console.log('Instructions clicked');
+            window.location.href = 'instructions.html';
+        });
+    } else {
+        console.log('Instructions not found');
     }
 
     function hoverPlayButton() {
@@ -44,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const mainImage = document.getElementById('mainImage');
 
     function hoverChoice(choice) {
-        console.log(`Hover over ${choice}`);
+        console.log(`assets/Images/RPSLS_${choice}.png`);
         mainImage.src = `assets/Images/RPSLS_${choice}.png`;
     }
 
@@ -93,9 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     function confirmBack() {
-        if (confirm("Are you sure you want to go back?")) {
-            window.location.href = 'index.html'; // This goes back to the previous page
-        }
+        
+        if (window.location.pathname === "/instructions.html") {
+            window.location.href = 'index.html';
+        } else {
+            if (confirm("Are you sure you want to go back?")) {
+                window.location.href = 'index.html';
+            }
+        } 
+        
     }
 
 

@@ -6,19 +6,12 @@ body {
     height: 100vh;
 }
 
-#invisible-block1 {
-    width: 975px; /* Adjust the width to create space on both sides */
-    height: 0; /* No height, invisible */
-    margin-top: 100px; /* Adjust margin as needed */
-}
-
+#invisible-block1,
 #invisible-block2 {
-    width: 985px; /* Adjust the width to create space on both sides */
-    height: 0; /* No height, invisible */
-    margin-top: 100px; /* Adjust margin as needed */
+    width: 1043.5px;
+    height: 0; 
+    margin-top: 100px; 
 }
-
-
 
 .game-container {
     width: 100%;
@@ -30,22 +23,43 @@ body {
 }
 
 .under-image {
-    position: relative; /* Maintain relative positioning */
-    top: -90px; /* Adjust top position as needed */
-    left: -800px; /* Adjust left position as needed */
-    z-index: -1; /* Ensure it's displayed under other images */
-    /* Add other styling properties as needed */
+    position: relative; 
+    top: -90px; 
+    left: -850px; 
+    z-index: -1; 
 }
 
 .instruction-container {
-    width: 50%; /* Adjust width as needed */
-    height: 80%; /* Add margin to center and create space above and below */
+    width: 50%; 
+    height: 80%; 
     padding: 20px;
-    background: rgba(128, 128, 128, 0.8); /* Gray with opacity */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Shadow for better visibility */
-    overflow-y: auto; /* Makes the content scrollable */
-    color: #fff; /* Text color */
+    background: rgba(128, 128, 128, 0.8); 
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    overflow-y: auto; 
+    color: #fff; 
+}
+
+.instruction-container::-webkit-scrollbar {
+    width: 12px;
+}
+
+.instruction-container::-webkit-scrollbar-track {
+    background: #555; 
+    border-radius: 10px; 
+}
+
+.instruction-container::-webkit-scrollbar-thumb {
+    background: #868484;
+    border-radius: 10px; 
+}
+
+.instruction-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa; 
+}
+
+.instruction-container::-webkit-scrollbar-thumb:active {
+    background: #ccc; 
 }
 
 .instruction-container h2 {
@@ -62,21 +76,24 @@ body {
 }
 
 .instructions {
-    width: 50%; /* Adjust width as needed */
+    width: 50%; 
     font-size: 30px;
 }
 
 .image-container {
-    width: 50%; /* Adjust width as needed */
+    width: 50%; 
 }
 
 .instruction-image {
-    width: 100%; /* Adjust image width */
-    height: auto; /* Maintain aspect ratio */
+    width: 100%; 
+    height: auto; 
 }
 
 .choices {
+    display: flex;
+    justify-content: center;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .choice {
@@ -85,10 +102,10 @@ body {
 }
 
 .choice img {
-    width: 150px; /* Adjust image size as needed */
+    width: 150px; 
     height: auto;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add some shadow to images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
 .choice p {
@@ -104,9 +121,8 @@ body {
 .main-menu {
     text-align: center;
     position: relative;
-    z-index: 1; /* Set a higher z-index for the main menu to ensure it's displayed on top */
+    z-index: 1; 
 }
-
 
 #score-container {
     position: absolute;
@@ -114,89 +130,116 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
 }
 
-#score-container {
-    display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center align items horizontally */
+.scoresComputer,
+.scoresPlayer,
+.result {
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 2em; 
+    font-weight: bold; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+    display: inline-block; 
+    margin: 20px 0; 
+    transition: transform 0.3s ease-in-out; 
+    text-transform: uppercase; 
+    letter-spacing: 2px;
 }
 
 .scoresComputer {
-    font-family: 'Permanent Marker', cursive; /* Graffiti font */
-    font-size: 2em; /* Larger font size for emphasis */
-    font-weight: bold; /* Bold text */
-    color: #ff00aa; /* Bright blue color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
-    display: inline-block; /* Ensure the text wraps correctly */
-    margin: 20px 0; /* Increase margin for more spacing around the element */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Spacing between letters */
+    color: #ff00aa; 
 }
 
 .scoresPlayer {
-    font-family: 'Permanent Marker', cursive; /* Graffiti font */
-    font-size: 2em; /* Larger font size for emphasis */
-    font-weight: bold; /* Bold text */
-    color: #00bfff; /* Bright blue color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
-    display: inline-block; /* Ensure the text wraps correctly */
-    margin: 20px 0; /* Increase margin for more spacing around the element */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Spacing between letters */
+    color: #00bfff; 
 }
 
 .result {
-    font-family: 'Permanent Marker', cursive; /* Graffiti font */
-    font-size: 2.5em; /* Larger font size for emphasis */
-    font-weight: bold; /* Bold text */
-    color: #fbff00; /* Bright yellow color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
-    display: inline-block; /* Ensure the text wraps correctly */
-    margin: 20px 0; /* Increase margin for more spacing around the element */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Spacing between letters */
-    text-align: center; /* Center the text */
+    font-size: 2.5em; 
+    color: #fbff00; 
+    display: none; 
+    background: rgba(0, 0, 0, 0.7); 
+    padding: 15px 20px;
+    border-radius: 10px;
+    z-index: 1000; 
+    border: 2px solid #fff;
 }
 
-.next-round-button {
-    font-family: 'Permanent Marker', cursive; /* Graffiti font */
-    font-size: 1.5em; /* Larger font size for emphasis */
-    font-weight: bold; /* Bold text */
-    color: #ffffff; /* White text color */
-    background-color: #ff5733; /* Bright button color */
+.next-round-button,
+.instructions-button,
+.back-button,
+.end-game-button {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 1.5em; 
+    font-weight: bold;
+    color: #ffffff; 
     border: none;
     border-radius: 25px;
     padding: 10px 30px;
-    margin: 20px 0; /* Margin for spacing */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth transition for interactions */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Spacing between letters */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
+    cursor: pointer; 
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-transform: uppercase; 
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+}
+
+.next-round-button {
+    background-color: #ff5733; 
 }
 
 .next-round-button:hover {
-    background-color: #e74c3c; /* Darker color on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background-color: #e74c3c; 
+    transform: scale(1.05);
+}
+
+.instructions-button,
+.back-button,
+.end-game-button {
+    background-color: #ff4500;
+    z-index: 999;
+}
+
+.instructions-button:hover,
+.back-button:hover {
+    transform: translateX(-50%) scale(1.1);
+}
+
+
+.end-game-button:hover {
+    transform: scale(1.1);
+}
+
+.instructions-button {
+    position: absolute;
+    top: 800px; 
+    left: 50%; 
+    transform: translateX(-50%);
+}
+
+.back-button {
+    position: absolute;
+    top: 100px; 
+    left: 10%; 
+    transform: translateX(-50%);
 }
 
 .invisible-svg {
     position: absolute;
     top: 47%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -40%);
     cursor: pointer;
-    width: 300px; /* Set the width equal to the play button's width */
-    height: 300px; /* Set the height equal to the play button's height */
-    border-radius: 50%; /* Make it a circle */
+    width: 300px;
+    height: 300px;
+    border-radius: 50%; 
     z-index: 3;
     fill: rgba(0, 0, 255, 0); 
 }
-
 
 .description {
     margin-top: 20px;
@@ -204,10 +247,9 @@ body {
     color: #333;
 }
 
-
-
-#player-choice-container, #slot-machine-container {
-    flex: 1; /* Each div will take up an equal amount of space */
+#player-choice-container,
+#slot-machine-container {
+    flex: 1; 
 }
 
 #player-choice-container {
@@ -216,12 +258,40 @@ body {
     align-items: center;
 }
 
-
-.choices {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 20px;
+.choice-textComputer {
+    font-family: 'Permanent Marker', cursive;
+    font-size: 23px; 
+    font-weight: bold; 
+    color: #ff00aa; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+    display: inline-block;
+    margin: 10px 0; 
+    transition: transform 0.3s ease-in-out; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    width: 256px;
 }
+
+.choice-textComputer span {
+    overflow: visible; 
+    white-space: nowrap; 
+}
+
+.choice-textPlayer {
+    font-family: 'Permanent Marker', cursive; 
+    font-size: 23px;; 
+    font-weight: bold; 
+    color: #00bfff; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); 
+    display: inline-block; 
+    margin: 10px 0; 
+    transition: transform 0.3s ease-in-out; 
+    text-transform: uppercase; 
+    letter-spacing: 2px; 
+    overflow: visible; 
+    white-space: nowrap; 
+}
+
 .choices button {
     margin: 0 10px;
     padding: 10px 20px;
@@ -229,16 +299,16 @@ body {
     cursor: pointer;
     transition: transform 0.2s;
 }
+
 .choices button:hover {
     transform: scale(1.1);
 }
-
 
 .choice-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 200px
+    width: 200px;
 }
 
 .divider-image {
@@ -246,120 +316,31 @@ body {
     height: 200px !important; 
 }
 
-.main-menu {
-    text-align: center;
-}
-
 .play-button {
     position: absolute;
-    margin-bottom: 20px; /* Add space between play image and button */
+    margin-bottom: 20px; 
     left: 0%;
-    transition: transform 0.3s; /* Apply transition to the play button */
-    z-index: 2; /* Set a higher z-index for the play button to ensure it's displayed on top of the main menu */
-}
-
-
-.instructions-button {
-    position: absolute; /* Position the button absolutely */
-    top: 800px; /* Adjust the top value to position the button vertically */
-    left: 50%; /* Center the button horizontally */
-    transform: translateX(-50%); /* Adjust to center the button perfectly */
-    font-family: 'Permanent Marker', cursive;
-    font-size: 2em;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #ff4500;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-
-.instructions-button:hover {
-    transform: translateX(-50%) scale(1.1); /* Scale up by 10% on hover */
-}
-
-.back-button {
-    position: absolute; /* Position the button absolutely */
-    top: 100px; /* Adjust the top value to position the button vertically */
-    left: 10%; /* Center the button horizontally */
-    transform: translateX(-50%); /* Adjust to center the button perfectly */
-    font-family: 'Permanent Marker', cursive;
-    font-size: 2em;
-    font-weight: bold;
-    color: #ffffff;
-    background-color: #ff4500;
-    border: none;
-    border-radius: 25px;
-    padding: 10px 30px;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    cursor: pointer;
-    z-index: 999;
-}
-
-
-.back-button:hover {
-    transform: translateX(-50%) scale(1.1); /* Scale up by 10% on hover */
-}
-
-.choice-textComputer {
-    font-family: 'Permanent Marker', cursive; /* Graffiti font */
-    font-size: 2em; /* Larger font size for emphasis */
-    font-weight: bold; /* Bold text */
-    color: #ff00aa; /* Bright blue color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
-    display: inline-block; /* Ensure the text wraps correctly */
-    margin: 10px 0; /* Margin for spacing around the element */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Spacing between letters */
-}
-
-.choice-textPlayer {
-    font-family: 'Permanent Marker', cursive; /* Graffiti font */
-    font-size: 2em; /* Larger font size for emphasis */
-    font-weight: bold; /* Bold text */
-    color: #00bfff; /* Bright blue color */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8); /* Add a shadow for depth */
-    display: inline-block; /* Ensure the text wraps correctly */
-    margin: 10px 0; /* Margin for spacing around the element */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for interactions */
-    text-transform: uppercase; /* Uppercase text */
-    letter-spacing: 2px; /* Spacing between letters */
-}
-
-.divider-image {
-    width: 600px; /* Adjust image width as needed */
-    height: auto; /* Maintain aspect ratio */
+    transition: transform 0.3s; 
+    z-index: 2;
 }
 
 #game-container {
-    display: none; /* Hide the game container by default */
-    justify-content: space-around; /* Add space around the elements */
+    display: none; 
+    justify-content: space-around;
 }
-
 
 #slot-machine-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-left: 20px; /* Adjust margin to create space between player and slot machine */
+    margin-left: 20px; 
 }
 
 .slot-machine {
     visibility: hidden;
     position: relative;
-    width: 200px; /* Adjust as needed */
-    height: 200px; /* Adjust as needed */
+    width: 200px; 
+    height: 200px; 
     overflow: hidden; 
 }
 
@@ -368,23 +349,22 @@ body {
     top: 0;
     left: 0;
     width: 100%;
-    height: 1500%; /* Adjust based on the number of images */
-    animation: spin-reel 5s infinite; /* Adjust animation duration as needed */
+    height: 1500%; 
+    animation: spin-reel 5s infinite; 
 }
 
 .spin-animation {
-    animation: spin-reel; /* Adjust animation duration as needed */
+    animation: spin-reel; 
 }
 
 @keyframes spin-reel {
     0% {
-        transform: translateY(-80%); /* Start from the top position */
+        transform: translateY(-80%); 
     }
     100% {
-        transform: translateY(var(--index)); /* Use a CSS variable for the translateY value */
+        transform: translateY(var(--index)); 
     }
 }
-
 
 .game-over-body {
     font-family: 'Permanent Marker', cursive;
@@ -408,67 +388,71 @@ body {
     margin: 20px 0;
 }
 
-.end-game-button {
-    font-size: 1.5em;
-    padding: 10px 20px;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: #00bfff;
-    border: none;
-    color: #fff;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-    transition: transform 0.3s ease-in-out;
+.game-over {
+    background: rgba(128, 128, 128, 0.8); 
+    border-radius: 10px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    margin: auto; 
+    width: 800px;
+    height: 400px;
 }
 
-.end-game-button:hover {
-    transform: scale(1.1);
+.game-over h1 {
+    font-size: 80px; 
+    margin-bottom: 10px; 
+    color: #00bfff;
+}
+
+.game-over p {
+    font-size: 40px; 
+    color: #f3ff8a; 
 }
 
 #mainImage {
-    display: block; /* Initially visible */
+    display: block; 
     margin-top: 20px;
 }
 
-/* Adjust SVG positions and sizes */
+#rockSVG,
+#paperSVG,
+#scissorsSVG,
+#lizardSVG,
+#spockSVG {
+    width: 29%;
+    height: 29%;
+}
+
 #rockSVG {
     top: 79.4%;
     left: 70.4%;
-    width: 29%;
-    height: 29%;
 }
 
 #paperSVG {
     top: 41.5%;
     left: 81.5%;
-    width: 29%;
-    height: 29%;
 }
 
 #scissorsSVG {
     top: 19%;
     left: 49%;
-    width: 29%;
-    height: 29%;
 }
 
 #lizardSVG {
     top: 80%;
     left: 30.8%;
-    width: 29%;
-    height: 29%;
 }
 
 #spockSVG {
     top: 42%;
     left: 18.5%;
-    width: 29%;
-    height: 29%;
 }
 
-/* Media queries for responsiveness */
 @media (max-width: 600px) {
-    #rockSVG, #paperSVG, #scissorsSVG, #lizardSVG, #spockSVG {
-        width: 30%;
-        height: 30%;
-    }
+  
+    .main-menu,
+.main-menu * {
+    transform: scale(100%);
 }
+
+}
+

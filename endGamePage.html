@@ -7,23 +7,27 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
-<body class="game-over-body">
+<body class="game-over-body" style="background-image: url('assets/Images/MainMenuBGI2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;"></body>
+<div class="game-over">
     <h1>Game Over</h1>
     <p id="endGameMessage">Thank you for playing!</p>
-    <button class="end-game-button" onclick="restartGame()">Play Again</button>
 
+    <button class="end-game-button" onclick="restartGame()">Play Again</button>
+    <button class="end-game-button" onclick="mainMenu()">Main Menu</button>
+</div>
     <script>
         function restartGame() {
             window.location.href = 'gamePage.html'; // Adjust this to the actual game page
         }
+        function mainMenu() {
+            window.location.href = 'index.html'; // Adjust this to the actual game page
+        }
 
-        // Function to get query parameter from URL
         function getQueryParam(param) {
             const urlParams = new URLSearchParams(window.location.search);
             return urlParams.get(param);
         }
 
-        // Display the winner message
         const winner = getQueryParam('winner');
         if (winner) {
             document.getElementById('endGameMessage').textContent = `Congratulations! ${winner} won the game!`;

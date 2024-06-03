@@ -8,78 +8,68 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body style="background-image: url('assets/Images/GameBackground.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
-    
     <div class="container">
-        
-    <div id="game-container">
-        <div id="invisible-block2"></div>    
-        <div class="choice-container">
-            <img id="playerChoiceIMG" src="" alt="Player's Choice">
-            <div id="playerChoice" class="choice-textPlayer">Player's Choice: </div>
-        </div>
-        
-        <img src="assets/Images/VSIcon.png" alt="Image" class="divider-image">
-        <div class="choice-container">            
-        <div id="slot-machine-and-computer">
-            <div id="slot-machine-container" class="slot-machine">
-            <div class="reel">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicelizard.png" alt="Lizard">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicepaper.png" alt="Paper">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicescissors.png" alt="Scissors">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicelizard.png" alt="Lizard">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicepaper.png" alt="Paper">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicescissors.png" alt="Scissors">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicelizard.png" alt="Lizard">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicepaper.png" alt="Paper">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicescissors.png" alt="Scissors">
-                    <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
+        <div id="game-container">
+            <div id="invisible-block2"></div>
+            <div class="choice-container">
+                <img id="playerChoiceIMG" src="" alt="Player's Choice">
+                <div id="playerChoice" class="choice-textPlayer">Player's Choice: </div>
+            </div>
+            <img src="assets/Images/VSIcon.png" alt="Image" class="divider-image">
+            <div class="choice-container">
+                <div id="slot-machine-and-computer">
+                    <div id="slot-machine-container" class="slot-machine">
+                        <div class="reel">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicelizard.png" alt="Lizard">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicepaper.png" alt="Paper">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicescissors.png" alt="Scissors">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicelizard.png" alt="Lizard">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicepaper.png" alt="Paper">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicescissors.png" alt="Scissors">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicelizard.png" alt="Lizard">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicepaper.png" alt="Paper">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicescissors.png" alt="Scissors">
+                            <img src="assets/Images/SlotMachine/RPSLS_Choicespock.png" alt="Spock">
+                        </div>
+                    </div>
+                    <div id="computerChoice" class="choice-textComputer"><span>Computer's Choice: </span></div>
+                </div>
             </div>
         </div>
-        <div id="computerChoice" class="choice-textComputer">Computer's Choice: </div>
+        <div id="invisible-block1"></div>
     </div>
-        </div>
-        
-</div>
-<div id="invisible-block1"></div>
-</div>
-
-    
-        <div class="main-image-container">
-            <img src="assets/Images/RPSLS.png" alt="RPSLS" id="mainImage">
-            
-            <svg id="rockSVG" class="invisible-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-            </svg>
-            <svg id="paperSVG" class="invisible-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-            </svg>
-            <svg id="scissorsSVG" class="invisible-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-            </svg>
-            <svg id="lizardSVG" class="invisible-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-            </svg>
-            <svg id="spockSVG" class="invisible-svg" viewBox="0 0 100 100">
-                <circle cx="50" cy="50" r="50"></circle>
-            </svg>
-        </div>
-        <div id="score-container" class="scores">
-            <div class="result" id="result"></div>
-            <button id="nextRoundButton" class="next-round-button" style="display: none;">Play Next Round</button>
-            <p id="playerScore" class="scoresPlayer">Player Score: 0</p>
-            <p id="computerScore" class="scoresComputer">Computer Score: 0</p>
-        </div>
-        
+    <div class="main-image-container">
+        <img src="assets/Images/RPSLS.png" alt="RPSLS" id="mainImage">
+        <svg id="rockSVG" class="invisible-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"></circle>
+        </svg>
+        <svg id="paperSVG" class="invisible-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"></circle>
+        </svg>
+        <svg id="scissorsSVG" class="invisible-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"></circle>
+        </svg>
+        <svg id="lizardSVG" class="invisible-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"></circle>
+        </svg>
+        <svg id="spockSVG" class="invisible-svg" viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="50"></circle>
+        </svg>
+    </div>
+    <div id="score-container" class="scores">
+        <div class="result" id="result"></div>
+        <button id="nextRoundButton" class="next-round-button" style="display: none;">Play Next Round</button>
+        <p id="playerScore" class="scoresPlayer">Player Score: 0</p>
+        <p id="computerScore" class="scoresComputer">Computer Score: 0</p>
     </div>
     <div id="computerChoice" class="choice"></div>
-</div>
-<button class="back-button" id="backButton">Back!</button>
-<img src="assets/Images/RPSLSTittleText.png" class="under-image" alt="Your Image">
+    <button class="back-button" id="backButton">Back!</button>
+    <img src="assets/Images/RPSLSTittleText.png" class="under-image" alt="Your Image">
     <script src="assets/JS/script.js"></script>
 </body>
 </html>

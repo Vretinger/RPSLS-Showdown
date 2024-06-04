@@ -77,6 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('backButton').addEventListener('click', function() {
         confirmBack();
     });
+    
 
     function confirmBack() {
         if (window.location.pathname === "/instructions.html") {

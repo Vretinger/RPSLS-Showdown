@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body style="background-image: url('assets/Images/GameBackground.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
+    <div class="GamePageContainer">
     <div class="container">
         <div id="game-container">
             <div id="invisible-block2"></div>
@@ -64,12 +65,15 @@
     <div id="score-container" class="scores">
         <div class="result" id="result"></div>
         <button id="nextRoundButton" class="next-round-button" style="display: none;">Play Next Round</button>
+        <div class = CurrentScore>
         <p id="playerScore" class="scoresPlayer">Player Score: 0</p>
         <p id="computerScore" class="scoresComputer">Computer Score: 0</p>
+    </div>
     </div>
     <div id="computerChoice" class="choice"></div>
     <button class="back-button" id="backButton">Back!</button>
     <img src="assets/Images/RPSLSTittleText.png" class="under-image" alt="Your Image">
+    </div>
     <script src="assets/JS/script.js"></script>
 </body>
 </html>

@@ -4,19 +4,27 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Main Menu</title>
+    <!-- Linking CSS stylesheet for styling -->
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body style="background-image: url('assets/Images/MainMenuBGI2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed; overflow: hidden;">
+    <!-- Main menu container -->
     <div class="main-menu">
-        <div class="logo-container">       
+        <!-- Logo container -->
+        <div class="logo-container">
+            <!-- Game logo -->
             <img src="assets/Images/RPSLSLogo.png" alt="Logo" class="main-menuImg">
+            <!-- Play button -->
             <img src="assets/Images/RPSLSLogoButton.png" alt="Play" class="play-button" id="playButton">
         </div>
+        <!-- Invisible SVG element for play button interactions -->
         <svg id="PlaySVG" class="invisible-svg" viewBox="0 0 100 100">
             <circle cx="50" cy="50" r="50" fill="transparent"></circle>
         </svg>
+        <!-- Button to navigate to instructions page -->
         <button class="instructions-button" id="instructions">Instructions</button>
     </div>
+    <!-- Linking JavaScript file -->
     <script src="assets/JS/script.js"></script>
 </body>
 </html>

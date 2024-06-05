@@ -1,17 +1,21 @@
+// Function to update the player's choice image
 function updatePlayerChoiceImage(choice) {
     const playerChoiceImage = document.getElementById('playerChoiceIMG');
     playerChoiceImage.src = `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
     playerChoiceImage.alt = choice;
 }
 
+// Event listener for DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
     const Instructions = document.getElementById('instructions');
     if (Instructions) {
+        // Navigate to instructions page on click
         Instructions.addEventListener('click', function() {
             window.location.href = 'instructions.html';
         });
     }
 
+    // Functions to handle hover effects on the play button
     function hoverPlayButton() {
         const playButton = document.getElementById('playButton');
         if (playButton) {
@@ -28,6 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const PlaySVG = document.getElementById('PlaySVG');
     if (PlaySVG) {
+        // Add hover and click event listeners to the play button SVG
         PlaySVG.addEventListener('mouseenter', hoverPlayButton);
         PlaySVG.addEventListener('mouseleave', unhoverPlayButton);
         PlaySVG.addEventListener('click', function() {
@@ -37,6 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const mainImage = document.getElementById('mainImage');
 
+    // Functions to handle hover effects on choice options
     function hoverChoice(choice) {
         mainImage.src = `assets/Images/RPSLS_${choice}.png`;
     }
@@ -45,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mainImage.src = 'assets/Images/RPSLS.png';
     }
 
+    // Function to handle the selection of a choice
     function selectChoice(choice) {
         const playerChoice = choice;
         const computerChoiceIndex = Math.floor(Math.random() * choices.length);
@@ -59,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
     choices.forEach(choice => {
         const svgElement = document.getElementById(`${choice}SVG`);
         if (svgElement) {
+            // Add hover and click event listeners to each choice SVG
             svgElement.addEventListener('mouseenter', () => hoverChoice(choice));
             svgElement.addEventListener('mouseleave', unhoverChoice);
             svgElement.addEventListener('click', () => {
@@ -70,15 +78,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // Function to get the image source for a given choice
     function getImageSrcForChoice(choice) {
         return `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
     }
 
+    // Add click event listener to the back button
     document.getElementById('backButton').addEventListener('click', function() {
         confirmBack();
     });
     
-
+    // Function to confirm the back navigation
     function confirmBack() {
         if (window.location.pathname === "/instructions.html") {
             window.location.href = 'index.html';
@@ -91,11 +101,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let slotMachineRunning = false;
 
+    // Function to run the slot machine animation
     function runSlotMachine(computerChoiceIndex, playerChoice) {
         if (!slotMachineRunning) {
             var reel = document.querySelector('.reel');
             var translateYValue;
 
+            // Determine the translateY value based on the computer's choice
             switch (choices[computerChoiceIndex]) {
                 case 'lizard':
                     translateYValue = '-0%';
@@ -138,6 +150,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to handle the player's choice and run the slot machine
     function playerChooses(playerChoice, computerChoice) {
         updatePlayerChoiceImage(playerChoice);
         document.getElementById('playerChoice').innerText = "Player's\n Choice: " + playerChoice;
@@ -157,6 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let computerScore = 0;
     let gamesPlayed = 0;
 
+    // Function to get the result of the game
     function getResult(player, computer) {
         const resultElement = document.getElementById('result');
         let resultText;
@@ -176,6 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return resultText;
     }
 
+    // Function to update the score based on the game result
     function updateScore(resultText) {
         if (resultText.startsWith('You win')) {
             playerScore++;
@@ -187,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
     }
 
+    // Function to check if there is a winner and handle the end of the game
     function checkWinner() {
         if (playerScore === 3) {
             setTimeout(function() {
@@ -201,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Functions to handle hover effects on the next round button
     function hovernextRoundButton() {
         const nextRoundButton = document.getElementById('nextRoundButton');
         if (nextRoundButton) {
@@ -215,14 +232,17 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to show the next round button
     function showNextRoundButton() {
         document.getElementById('nextRoundButton').style.display = 'block';
     }
 
+    // Function to hide the next round button
     function hideNextRoundButton() {
         document.getElementById('nextRoundButton').style.display = 'none';
     }
 
+    // Function to show the game result
     function showResults() {
         const resultContainer = document.getElementById('result');
         if (resultContainer) {
@@ -232,20 +252,24 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Function to hide the game result
     function hideResults() {
         document.getElementById('result').style.display = 'none';
     }
 
     const nextRoundButton = document.getElementById('nextRoundButton');
     if (nextRoundButton) {
+        // Add hover event listeners to the next round button
         nextRoundButton.addEventListener('mouseenter', hovernextRoundButton);
         nextRoundButton.addEventListener('mouseleave', unhovernextRoundButton);
     }
 
+    // Add click event listener to the next round button
     document.getElementById('nextRoundButton').addEventListener('click', function() {
         NextGame();
     });
 
+    // Function to reset the game for the next round
     function NextGame() {
         document.querySelector('.under-image').style.left = '-850px';
         document.getElementById('invisible-block1').style.display = 'block';
@@ -258,6 +282,7 @@ document.addEventListener('DOMContentLoaded', () => {
         hideNextRoundButton();
     }
 
+    // Function to reset the game scores
     function resetGame() {
         playerScore = 0;
         computerScore = 0;
@@ -267,6 +292,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('result').textContent = '';
     }
 
+    // Game result logic dictionary
     const results = {
         rock: {scissors: 'crushes', lizard: 'crushes'},
         paper: {rock: 'covers', spock: 'disproves'},
@@ -275,6 +301,7 @@ document.addEventListener('DOMContentLoaded', () => {
         spock: {scissors: 'smashes', rock: 'vaporizes'}
     };
 
+    // Initialize score display
     document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
     document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
 });

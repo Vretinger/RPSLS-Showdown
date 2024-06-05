@@ -1,112 +1,119 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Rock-Paper-Scissors-Lizard-Spock Web Application
 
-Welcome Vretinger Vretinger,
+<img src="assets/Images/RPSLSLogo.png" alt="RPSLS Logo" style="width: auto; max-width: 40%; height: auto;">
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
 
-You can safely delete this README.md file or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **April 26, 2024**
 
-## Gitpod Reminders
+## Table of Contents
+- [Introduction](#introduction)
+- [Features](#features)
+- [Target Audience](#target-audience)
+- [Design Decisions](#design-decisions)
+- [Deployment Procedure](#deployment-procedure)
+- [Game Description](#game-description)
+- [Features](#features)
+- [Testing](#testing)
+- [Deployment](#deployment)
+- [Credits](#credits)
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+## Introduction
+This web application implements the popular game "Rock-Paper-Scissors-Lizard-Spock". It allows users to play against the computer, providing an enjoyable and engaging experience.
 
-`python3 -m http.server`
+## Features
+- Allows users to choose from five options: rock, paper, scissors, lizard, or Spock.
+- Displays the computer's choice and the game result.
+- Tracks the score for both the player and the computer.
+- Provides a next round button to continue playing.
+- Offers a visually appealing interface with responsive design.
 
-A blue button should appear to click: _Make Public_,
+## Target Audience
+The target audience for this web application includes:
+- Gamers looking for a fun and challenging experience.
+- Individuals seeking entertainment during leisure time.
+- Developers interested in learning about game development and interactive web design.
+- Or TBBT Fans ;)
 
-Another blue button should appear to click: _Open Browser_.
+## Design Decisions
+- **User Interaction**: The web application uses intuitive buttons and hover effects to enhance user interaction.
+- **Visual Design**: The interface incorporates vibrant colors and dynamic elements to create an engaging experience.
+- **Responsive Layout**: Utilizes media queries to ensure compatibility with various screen sizes, enhancing accessibility.
+- **Game Logic**: Implements a fair game logic based on the rules of "Rock-Paper-Scissors-Lizard-Spock", providing an enjoyable gaming experience.
 
-To run a backend Python file, type `python3 app.py` if your Python file is named `app.py`, of course.
+<img src="assets/Images/RPSLSPreview.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">
 
-A blue button should appear to click: _Make Public_,
+## Deployment Procedure
+To deploy the web application, follow these steps:
+1. Clone the repository to your local machine.
+2. Ensure you have a modern web browser installed.
+3. Open the `index.html` file in your web browser.
+4. Start playing and enjoy the game!
 
-Another blue button should appear to click: _Open Browser_.
+Feel free to customize the application according to your preferences or project requirements. Enjoy playing Rock-Paper-Scissors-Lizard-Spock!
 
-By Default, Gitpod gives you superuser security privileges. Therefore, you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+## Game Description
 
-To log into the Heroku toolbelt CLI:
+<img src="assets/Images/RPSLSInstructionHover.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you, so do not share it. If you accidentally make it public, you can create a new one with _Regenerate API Key_.
+Rock Paper Scissors Lizard Spock (RPSLS) is a web-based game that offers a modern twist on the classic game of Rock Paper Scissors. The game aims to provide entertainment for users of all ages, offering an engaging and interactive experience.
 
-------
+## Features
 
-## Release History
+### Existing Features
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+1. **Main Menu**
+   - Allows users to navigate between different sections of the game, including gameplay and instructions.
+   - Features a visually appealing design with intuitive navigation options.
 
-**April 26 2024:** Update node version to 16
+2. **Gameplay Page**
+   - Provides an interactive interface for players to make their choices.
+   - Displays player and computer choices, along with the outcome of each round.
 
-**September 20 2023:** Update Python version to 3.9.17.
+3. **Endgame Page**
+   - Displays a "Game Over" message at the end of each game.
+   - Allows users to restart the game or return to the main menu.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
+4. **Instructions Page**
+   - Offers clear and concise instructions on how to play the game.
+   - Includes visuals to aid users in understanding the rules and making their choices.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+### Features Left to Implement
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- **Multiplayer Mode**: Allow users to play against friends or other online players.
+- **Customizable Settings**: Enable users to adjust game parameters such as difficulty level and game duration.
+- **Leaderboard**: Implement a feature to track high scores and display them on the main menu.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+## Testing
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The game has undergone extensive testing to ensure functionality across different browsers and devices.
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+### Validator Testing
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+- **HTML**
+  - No errors were returned when passing through the official [W3C validator](https://validator.w3.org/nu/?doc=https%3A%2F%2Fcode-institute-org.github.io%2Flove-running-2.0%2Findex.html)
+- **CSS**
+  - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+### Unfixed Bugs
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+No major bugs were discovered during testing. Minor issues related to styling may be present on certain screen sizes, which will be addressed in future updates.
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
+## Deployment
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+The game was deployed to a hosting platform (e.g., GitHub Pages) using the following steps:
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+1. Navigate to the GitHub repository's Settings tab.
+2. From the source section drop-down menu, select the Master Branch.
+3. The page will be automatically refreshed to indicate successful deployment.
+4. The live link to the deployed game can be found [here](https://vretinger.github.io/RPSLS-Showdown/).
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+## Credits
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+### Content
 
-------
+- Game rules and instructions were adapted from various online sources.
 
-## FAQ about the uptime script
+### Media
 
-**Why have you added this script?**
+- Images and icons used in the game were sourced from open-source libraries and repositories. But mainly created using AI such as Copilot.
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
-
-**How will this affect me?**
-
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
-
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
-
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
-
-**So….?**
-
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
-
-**Can I opt out?**
-
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
-
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
-
-**Anything more?**
-
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
-
----
-
-Happy coding!

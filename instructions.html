@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Instruction Box</title>
+    <!-- Linking CSS stylesheet for styling -->
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
 <body style="background-image: url('assets/Images/MainMenuBGI2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
+    <!-- Button to navigate back to the main menu -->
     <button class="back-button" id="backButton">Back!</button>
+    <!-- Main container for instructions -->
     <div class="instruction-container">
         <h2>How to Play</h2>
         <p>Welcome to Rock Paper Scissors Lizard Spock! The rules are simple:</p>
+        <!-- Wrapper for instructions and image -->
         <div class="content-wrapper">
+            <!-- List of game rules -->
             <div class="instructions">
                 <ul>
                     <li>Scissors cuts Paper</li>
@@ -26,11 +31,13 @@
                     <li>Rock crushes Scissors</li>
                 </ul>
             </div>
+            <!-- Image related to instructions -->
             <div class="image-container">
                 <img src="assets/Images/RPSLS.png" alt="Your Image" class="instruction-image">
             </div>
         </div>
         <h2>Choices</h2>
+        <!-- Container for displaying choices with images and descriptions -->
         <div class="choices">
             <div class="choice">
                 <img src="assets/Images/SlotMachine/RPSLS_Choicerock.png" alt="Rock">
@@ -53,13 +60,16 @@
                 <p>Spock</p>
             </div>
         </div>
+        <!-- Instructions on how to make a choice -->
         <div class="choice-instructions">
             <h3>How to Make Your Choice</h3>
             <img src="assets/Images/RPSLSInstructionHover.png" alt="How to Make Your Choice" class="choice-img">
             <p>Simply hover over your desired choice and click to select it!</p>
         </div>
+        <!-- Final instruction paragraph -->
         <p>After selecting your choice, the computer will randomly select its choice. The choices will then be revealed, and the winner will be determined based on the rules listed above.</p>
     </div>
+    <!-- Linking JavaScript file -->
     <script src="assets/JS/script.js"></script>
 </body>
 </html>

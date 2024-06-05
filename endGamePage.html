@@ -7,33 +7,43 @@
     <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/CSS/style.css">
 </head>
-<body class="game-over-body" style="background-image: url('assets/Images/MainMenuBGI2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;"></body>
+<body class="game-over-body" style="background-image: url('assets/Images/MainMenuBGI2.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center center; background-attachment: fixed;">
+
+<!-- Game Over message container -->
 <div class="game-over">
     <h1>Game Over</h1>
     <p id="endGameMessage">Thank you for playing!</p>
 
+    <!-- Buttons to restart the game or go to the main menu -->
     <button class="end-game-button" onclick="restartGame()">Play Again</button>
     <button class="end-game-button" onclick="mainMenu()">Main Menu</button>
 </div>
-    <script>
-        function restartGame() {
-            window.location.href = 'gamePage.html'; // Adjust this to the actual game page
-        }
-        function mainMenu() {
-            window.location.href = 'index.html'; // Adjust this to the actual game page
-        }
 
-        function getQueryParam(param) {
-            const urlParams = new URLSearchParams(window.location.search);
-            return urlParams.get(param);
-        }
+<script>
+    // Function to redirect the user to the game page to restart the game
+    function restartGame() {
+        window.location.href = 'gamePage.html'; // Adjust this to the actual game page
+    }
 
-        const winner = getQueryParam('winner');
-        if (winner) {
-            document.getElementById('endGameMessage').textContent = `Congratulations! ${winner} won the game!`;
-        } else {
-            document.getElementById('endGameMessage').textContent = 'Thank you for playing!';
-        }
-    </script>
+    // Function to redirect the user to the main menu
+    function mainMenu() {
+        window.location.href = 'index.html'; // Adjust this to the actual main menu page
+    }
+
+    // Function to get a query parameter from the URL
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    // Check for the 'winner' query parameter and display a corresponding message
+    const winner = getQueryParam('winner');
+    if (winner) {
+        document.getElementById('endGameMessage').textContent = `Congratulations! ${winner} won the game!`;
+    } else {
+        document.getElementById('endGameMessage').textContent = 'Thank you for playing!';
+    }
+</script>
+
 </body>
 </html>

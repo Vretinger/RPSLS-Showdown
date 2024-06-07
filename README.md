@@ -98,6 +98,17 @@ The game has undergone extensive testing to ensure functionality across differen
 - **CSS**
   - No errors were found when passing through the official [(Jigsaw) validator](https://jigsaw.w3.org/css-validator/validator?uri=https%3A%2F%2Fvalidator.w3.org%2Fnu%2F%3Fdoc%3Dhttps%253A%252F%252Fcode-institute-org.github.io%252Flove-running-2.0%252Findex.html&profile=css3svg&usermedium=all&warning=1&vextwarning=&lang=en#css)
 
+### Manual Testing
+- **Functionality**: Tested all game features to ensure they work as intended.
+- **Cross-Browser Compatibility**: Verified the game works on different web browsers like Chrome, Firefox, and Safari.
+- **Responsive Design**: Checked the layout on various devices and screen sizes.
+- **User Interaction**: Ensured all buttons and interactive elements respond correctly.
+
+### Fixed Bugs
+- Resolved minor styling issues on certain screen sizes.
+- Fixed a bug where the game result was not displayed correctly in specific scenarios.
+
+
 ### Unfixed Bugs
 
 No major bugs were discovered during testing. Minor issues related to styling may be present on certain screen sizes, which will be addressed in future updates.

@@ -194,6 +194,7 @@ body {
 .next-round-button,
 .instructions-button,
 .back-button,
+.reset-button,
 .end-game-button {
     margin-right: 10px;
     margin-left: 10px;
@@ -227,8 +228,14 @@ body {
     z-index: 999;
 }
 
+.reset-button {
+    background-color: #ff0000;
+    z-index: 999;
+}
+
 .instructions-button:hover,
-.back-button:hover {
+.back-button:hover,
+.reset-button:hover {
     transform: translateX(-50%) scale(1.1);
 }
 
@@ -243,9 +250,16 @@ body {
     transform: translateX(-50%);
 }
 
-.back-button {
+.back-button{
     position: absolute;
-    top: 100px;
+    top: 50px;
+    left: 10%;
+    transform: translateX(-50%);
+}
+
+.reset-button {
+    position: absolute;
+    top: 150px;
     left: 10%;
     transform: translateX(-50%);
 }

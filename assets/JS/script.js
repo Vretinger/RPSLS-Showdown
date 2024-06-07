@@ -168,7 +168,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let playerScore = 0;
     let computerScore = 0;
-    let gamesPlayed = 0;
 
     // Function to get the result of the game
     function getResult(player, computer) {
@@ -197,7 +196,6 @@ document.addEventListener('DOMContentLoaded', () => {
         } else if (resultText.startsWith('You lose')) {
             computerScore++;
         }
-        gamesPlayed++;
         document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
         document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
     }
@@ -269,6 +267,11 @@ document.addEventListener('DOMContentLoaded', () => {
         NextGame();
     });
 
+     // Add click event listener to the Reset button
+     document.getElementById('resetButton').addEventListener('click', function() {
+        resetGame();
+    });
+
     // Function to reset the game for the next round
     function NextGame() {
         document.querySelector('.under-image').style.left = '-850px';
@@ -282,15 +285,13 @@ document.addEventListener('DOMContentLoaded', () => {
         hideNextRoundButton();
     }
 
-    // Function to reset the game scores
-    function resetGame() {
-        playerScore = 0;
-        computerScore = 0;
-        gamesPlayed = 0;
-        document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
-        document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
-        document.getElementById('result').textContent = '';
-    }
+// Function to reset the game scores
+function resetGame() {
+    playerScore = 0;
+    computerScore = 0;
+    document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
+    document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
+}
 
     // Game result logic dictionary
     const results = {

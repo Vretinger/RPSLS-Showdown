@@ -26,10 +26,21 @@ The UI/UX design of this web application is crafted to resonate with a diverse a
 - **Fandom Community**: The design pays homage to "The Big Bang Theory" fanbase, delivering a meticulously themed user experience that resonates with aficionados.
 
 ## Design Decisions
-- **User Interaction**: Leveraging intuitive buttons and dynamic hover effects, the interface fosters seamless interaction, enhancing user engagement.
-- **Visual Design**: Vibrant color schemes and visually stimulating elements are meticulously curated to captivate users, ensuring an immersive and captivating experience.
-- **Responsive Layout**: Employing adaptive design principles, the application seamlessly adjusts to various screen sizes, ensuring accessibility across diverse devices and platforms.
-- **Game Logic**: Enforcing a robust game logic rooted in the principles of "Rock-Paper-Scissors-Lizard-Spock," the application guarantees fairness and enjoyment throughout gameplay.
+
+- **User Interaction**: Drawing inspiration from street graffiti art, our interface leverages intuitive buttons and dynamic hover effects to foster seamless interaction, enhancing user engagement and evoking the spontaneity and energy of street art.
+
+- **Visual Design**: Inspired by the vibrant and dynamic nature of street graffiti, our game's visual design features a bold and eclectic mix of colors, patterns, and textures. The color palette, including Pastel Pink, Lavender, Mint Green, and Baby Blue, reflects the playful and expressive spirit of street art, while complementary saturated tones add depth and visual interest. Vivid imagery and visually stimulating elements are meticulously curated to captivate users and create an immersive and captivating experience reminiscent of exploring a vibrant urban landscape.
+
+- **Fonts**: The visual identity of our game is further enhanced by the use of the "Permanent Marker" font, sourced from Google Fonts. This font choice reflects the bold and expressive nature of street graffiti, adding authenticity and character to the interface.
+
+- **Responsive Layout**: Our application's adaptive design principles ensure seamless accessibility across diverse devices and platforms, mirroring the inclusive and accessible nature of street art. Whether viewed on a desktop, tablet, or smartphone, players can enjoy a consistent and optimized gaming experience, reflecting the versatility and adaptability inherent in street art culture.
+
+- **Game Logic**: Rooted in the strategic and competitive spirit of street culture, our game logic enforces a robust set of rules inspired by "Rock-Paper-Scissors-Lizard-Spock." By adhering to these established rules, players can engage in strategic decision-making and competitive play, enhancing the overall gaming experience while paying homage to the ingenuity and creativity of street artists.
+
+The fusion of street graffiti elements with intuitive design decisions and the distinctive "Permanent Marker" font creates a cohesive and immersive gaming environment that celebrates the vibrant and diverse culture of urban street art.
+
+
+
 
 
 <img src="assets/Images/RPSLSPreview.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">

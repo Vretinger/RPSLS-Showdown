@@ -6,7 +6,7 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Target Audience](#target-audience)
+- [UI and UX](#UI/UX)
 - [Design Decisions](#design-decisions)
 - [Deployment Procedure](#deployment-procedure)
 - [Game Description](#game-description)
@@ -18,18 +18,19 @@
 ## Introduction
 This web application implements the popular game "Rock-Paper-Scissors-Lizard-Spock". It allows users to play against the computer, providing an enjoyable and engaging experience.
 
-## Target Audience
-The target audience for this web application includes:
-- Gamers looking for a fun and challenging experience.
-- Individuals seeking entertainment during leisure time.
-- Developers interested in learning about game development and interactive web design.
-- Or TBBT Fans ;)
+## UI/UX
+The UI/UX design of this web application is crafted to resonate with a diverse audience, ensuring an enriching experience for every user profile:
+- **Gaming Enthusiasts**: Immersive and visually captivating design elements are integrated to provide a thrilling gaming journey.
+- **Casual Users**: Intuitive interfaces and engaging visuals offer a seamless and enjoyable entertainment experience for leisurely moments.
+- **Creative Minds**: Innovative UI/UX features encourage exploration, appealing to developers keen on discovering novel design paradigms.
+- **Fandom Community**: The design pays homage to "The Big Bang Theory" fanbase, delivering a meticulously themed user experience that resonates with aficionados.
 
 ## Design Decisions
-- **User Interaction**: The web application uses intuitive buttons and hover effects to enhance user interaction.
-- **Visual Design**: The interface incorporates vibrant colors and dynamic elements to create an engaging experience.
-- **Responsive Layout**: Utilizes media queries to ensure compatibility with various screen sizes, enhancing accessibility.
-- **Game Logic**: Implements a fair game logic based on the rules of "Rock-Paper-Scissors-Lizard-Spock", providing an enjoyable gaming experience.
+- **User Interaction**: Leveraging intuitive buttons and dynamic hover effects, the interface fosters seamless interaction, enhancing user engagement.
+- **Visual Design**: Vibrant color schemes and visually stimulating elements are meticulously curated to captivate users, ensuring an immersive and captivating experience.
+- **Responsive Layout**: Employing adaptive design principles, the application seamlessly adjusts to various screen sizes, ensuring accessibility across diverse devices and platforms.
+- **Game Logic**: Enforcing a robust game logic rooted in the principles of "Rock-Paper-Scissors-Lizard-Spock," the application guarantees fairness and enjoyment throughout gameplay.
+
 
 <img src="assets/Images/RPSLSPreview.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">
 

@@ -43,12 +43,23 @@ The target audience for this web application includes:
 
 ## Deployment Procedure
 To deploy the web application, follow these steps:
+
+### Cloning the Repository
+1. Navigate to the repository's main page on GitHub.
+2. Click on the "Code" button.
+3. Copy the repository URL.
+4. Open a terminal and run `git clone [repository URL]`.
+
+### Forking the Repository
+1. Navigate to the repository's main page on GitHub.
+2. Click on the "Fork" button at the top right corner of the page.
+3. Follow the prompts to fork the repository to your GitHub account.
+
+### Running Locally
 1. Clone the repository to your local machine.
 2. Ensure you have a modern web browser installed.
 3. Open the `index.html` file in your web browser.
 4. Start playing and enjoy the game!
-
-Feel free to customize the application according to your preferences or project requirements. Enjoy playing Rock-Paper-Scissors-Lizard-Spock!
 
 ## Game Description
 

@@ -51,13 +51,29 @@ document.addEventListener('DOMContentLoaded', () => {
         mainImage.src = 'assets/Images/RPSLS.png';
     }
 
+    
+    let lastRoundWasTie = false; 
+
     // Function to handle the selection of a choice
     function selectChoice(choice) {
         const playerChoice = choice;
-        const computerChoiceIndex = Math.floor(Math.random() * choices.length);
-        const computerChoice = choices[computerChoiceIndex];
+        let computerChoiceIndex = Math.floor(Math.random() * choices.length);
+        let computerChoice = choices[computerChoiceIndex];
         document.getElementById('game-container').style.display = 'flex';
         document.getElementById('invisible-block1').style.display = 'none';
+    
+        // Check for a tie
+        if (playerChoice === computerChoice) {
+            if (lastRoundWasTie) {
+                // If the last round was also a tie, change the computer's choice
+                computerChoiceIndex = (computerChoiceIndex !== 5) ? computerChoiceIndex + 1 : computerChoiceIndex - 1;
+                computerChoice = choices[computerChoiceIndex];
+            }
+            lastRoundWasTie = true;
+        } else {
+            lastRoundWasTie = false;
+        }
+    
         playerChooses(playerChoice, computerChoice);
     }
 

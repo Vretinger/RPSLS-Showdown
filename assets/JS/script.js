@@ -9,11 +9,11 @@ const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
 const nextRoundButton = document.getElementById('nextRoundButton');
 // Game result logic dictionary
     const results = {
-        rock: {scissors: 'crushes', lizard: 'crushes'},
-        paper: {rock: 'covers', spock: 'disproves'},
-        scissors: {paper: 'cuts', lizard: 'decapitates'},
-        lizard: {spock: 'poisons', paper: 'eats'},
-        spock: {scissors: 'smashes', rock: 'vaporizes'}
+        Rock: {Scissors: 'crushes', Lizard: 'crushes'},
+        Paper: {Rock: 'covers', Spock: 'disproves'},
+        Scissors: {Paper: 'cuts', Lizard: 'decapitates'},
+        Lizard: {Spock: 'poisons', Paper: 'eats'},
+        Spock: {Scissors: 'smashes', Rock: 'vaporizes'}
     };
 
 
@@ -78,10 +78,12 @@ document.addEventListener('DOMContentLoaded', () => {
         // Check for a tie
         if (playerChoice === computerChoice) {
             if (lastRoundWasTie) {
+                console.log("second tie")
                 // If the last round was also a tie, change the computer's choice
-                computerChoiceIndex = (computerChoiceIndex !== 5) ? computerChoiceIndex + 1 : computerChoiceIndex - 1;
+                computerChoiceIndex = (computerChoiceIndex !== 4) ? computerChoiceIndex + 1 : computerChoiceIndex - 1;
                 computerChoice = choices[computerChoiceIndex];
             }
+            console.log("tie")
             lastRoundWasTie = true;
         } else {
             lastRoundWasTie = false;
@@ -134,19 +136,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // Determine the translateY value based on the computer's choice
             switch (choices[computerChoiceIndex]) {
-                case 'lizard':
+                case 'Lizard':
                     translateYValue = '-0%';
                     break;
-                case 'rock':
+                case 'Rock':
                     translateYValue = '-6.9%';
                     break;
-                case 'paper':
+                case 'Paper':
                     translateYValue = '-13.8%';
                     break;
-                case 'scissors':
+                case 'Scissors':
                     translateYValue = '-20.4%';
                     break;
-                case 'spock':
+                case 'Spock':
                     translateYValue = '-27.2%';
                     break;
                 default:
@@ -310,6 +312,7 @@ document.addEventListener('DOMContentLoaded', () => {
 function resetGame() {
     playerScore = 0;
     computerScore = 0;
+    lastRoundWasTie = false;
     document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
     document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
 }

@@ -275,7 +275,7 @@ body {
     height: 300px;
     border-radius: 50%;
     z-index: 3;
-    fill: rgba(0, 0, 255);
+    fill: rgba(0, 0, 255, 0);
 }
 
 /* Description */

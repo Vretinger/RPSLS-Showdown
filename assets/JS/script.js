@@ -5,7 +5,7 @@ let playerScore = 0;
 let computerScore = 0;
 const playSVG = document.getElementById('PlaySVG');
 const mainImage = document.getElementById('mainImage');
-const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
 const nextRoundButton = document.getElementById('nextRoundButton');
 // Game result logic dictionary
     const results = {
@@ -20,7 +20,7 @@ const nextRoundButton = document.getElementById('nextRoundButton');
 // Function to update the player's choice image
 function updatePlayerChoiceImage(choice) {
     const playerChoiceImage = document.getElementById('playerChoiceIMG');
-    playerChoiceImage.src = `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
+    playerChoiceImage.src = `assets/Images/SlotMachine/RPSLS_Choice_${choice}.png`;
     playerChoiceImage.alt = choice;
 }
 
@@ -60,11 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Functions to handle hover effects on choice options
     function hoverChoice(choice) {
-        mainImage.src = `assets/Images/RPSLS_${choice}.png`;
+        mainImage.src = `assets/Images/RPSLS_Icon_${choice}.png`;
     }
 
     function unhoverChoice() {
-        mainImage.src = 'assets/Images/RPSLS.png';
+        mainImage.src = 'assets/Images/RPSLS_Game_Logo.png';
     }
 
     // Function to handle the selection of a choice
@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Function to get the image source for a given choice
     function getImageSrcForChoice(choice) {
-        return `assets/Images/SlotMachine/RPSLS_Choice${choice}.png`;
+        return `assets/Images/SlotMachine/RPSLS_Choice_${choice}.png`;
     }
 
     // Add click event listener to the back button

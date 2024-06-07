@@ -275,7 +275,7 @@ body {
     height: 300px;
     border-radius: 50%;
     z-index: 3;
-    fill: rgba(0, 0, 255, 0);
+    fill: rgba(0, 0, 255);
 }
 
 /* Description */
@@ -460,37 +460,37 @@ body {
     margin-top: 20px;
 }
 
-#rockSVG,
-#paperSVG,
-#scissorsSVG,
-#lizardSVG,
-#spockSVG {
+#RockSVG,
+#PaperSVG,
+#ScissorsSVG,
+#LizardSVG,
+#SpockSVG {
     width: 29%;
     height: 29%;
     color: #00bfff;
 }
 
-#rockSVG {
+#RockSVG {
     top: 79.4%;
     left: 70.4%;
 }
 
-#paperSVG {
+#PaperSVG {
     top: 41.5%;
     left: 81.5%;
 }
 
-#scissorsSVG {
+#ScissorsSVG {
     top: 19%;
     left: 49%;
 }
 
-#lizardSVG {
+#LizardSVG {
     top: 80%;
     left: 30.8%;
 }
 
-#spockSVG {
+#SpockSVG {
     top: 42%;
     left: 18.5%;
 }

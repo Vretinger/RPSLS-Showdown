@@ -1,3 +1,22 @@
+//Global varibles
+let lastRoundWasTie = false; 
+let slotMachineRunning = false;
+let playerScore = 0;
+let computerScore = 0;
+const playSVG = document.getElementById('PlaySVG');
+const mainImage = document.getElementById('mainImage');
+const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
+const nextRoundButton = document.getElementById('nextRoundButton');
+// Game result logic dictionary
+    const results = {
+        rock: {scissors: 'crushes', lizard: 'crushes'},
+        paper: {rock: 'covers', spock: 'disproves'},
+        scissors: {paper: 'cuts', lizard: 'decapitates'},
+        lizard: {spock: 'poisons', paper: 'eats'},
+        spock: {scissors: 'smashes', rock: 'vaporizes'}
+    };
+
+
 // Function to update the player's choice image
 function updatePlayerChoiceImage(choice) {
     const playerChoiceImage = document.getElementById('playerChoiceIMG');
@@ -7,10 +26,10 @@ function updatePlayerChoiceImage(choice) {
 
 // Event listener for DOM content loaded
 document.addEventListener('DOMContentLoaded', () => {
-    const Instructions = document.getElementById('instructions');
-    if (Instructions) {
+    const instructions = document.getElementById('instructions');
+    if (instructions) {
         // Navigate to instructions page on click
-        Instructions.addEventListener('click', function() {
+        instructions.addEventListener('click', function() {
             window.location.href = 'instructions.html';
         });
     }
@@ -30,17 +49,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    const PlaySVG = document.getElementById('PlaySVG');
-    if (PlaySVG) {
+    if (playSVG) {
         // Add hover and click event listeners to the play button SVG
-        PlaySVG.addEventListener('mouseenter', hoverPlayButton);
-        PlaySVG.addEventListener('mouseleave', unhoverPlayButton);
-        PlaySVG.addEventListener('click', function() {
+        playSVG.addEventListener('mouseenter', hoverPlayButton);
+        playSVG.addEventListener('mouseleave', unhoverPlayButton);
+        playSVG.addEventListener('click', function() {
             window.location.href = 'gamePage.html';
         });
     }
-
-    const mainImage = document.getElementById('mainImage');
 
     // Functions to handle hover effects on choice options
     function hoverChoice(choice) {
@@ -50,9 +66,6 @@ document.addEventListener('DOMContentLoaded', () => {
     function unhoverChoice() {
         mainImage.src = 'assets/Images/RPSLS.png';
     }
-
-    
-    let lastRoundWasTie = false; 
 
     // Function to handle the selection of a choice
     function selectChoice(choice) {
@@ -76,8 +89,6 @@ document.addEventListener('DOMContentLoaded', () => {
     
         playerChooses(playerChoice, computerChoice);
     }
-
-    const choices = ['rock', 'paper', 'scissors', 'lizard', 'spock'];
 
     choices.forEach(choice => {
         const svgElement = document.getElementById(`${choice}SVG`);
@@ -114,8 +125,6 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
-
-    let slotMachineRunning = false;
 
     // Function to run the slot machine animation
     function runSlotMachine(computerChoiceIndex, playerChoice) {
@@ -181,9 +190,6 @@ document.addEventListener('DOMContentLoaded', () => {
             runSlotMachine(choices.indexOf(computerChoice), playerChoice);
         }
     }
-
-    let playerScore = 0;
-    let computerScore = 0;
 
     // Function to get the result of the game
     function getResult(player, computer) {
@@ -271,7 +277,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('result').style.display = 'none';
     }
 
-    const nextRoundButton = document.getElementById('nextRoundButton');
     if (nextRoundButton) {
         // Add hover event listeners to the next round button
         nextRoundButton.addEventListener('mouseenter', hovernextRoundButton);
@@ -280,7 +285,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Add click event listener to the next round button
     document.getElementById('nextRoundButton').addEventListener('click', function() {
-        NextGame();
+        nextGame();
     });
 
      // Add click event listener to the Reset button
@@ -289,7 +294,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // Function to reset the game for the next round
-    function NextGame() {
+    function nextGame() {
         document.querySelector('.under-image').style.left = '-850px';
         document.getElementById('invisible-block1').style.display = 'block';
         document.getElementById('invisible-block2').style.display = 'none';
@@ -308,15 +313,6 @@ function resetGame() {
     document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;
     document.getElementById('computerScore').textContent = `Computer Score: ${computerScore}`;
 }
-
-    // Game result logic dictionary
-    const results = {
-        rock: {scissors: 'crushes', lizard: 'crushes'},
-        paper: {rock: 'covers', spock: 'disproves'},
-        scissors: {paper: 'cuts', lizard: 'decapitates'},
-        lizard: {spock: 'poisons', paper: 'eats'},
-        spock: {scissors: 'smashes', rock: 'vaporizes'}
-    };
 
     // Initialize score display
     document.getElementById('playerScore').textContent = `Player Score: ${playerScore}`;

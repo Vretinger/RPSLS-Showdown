@@ -6,7 +6,6 @@
 
 ## Table of Contents
 - [Introduction](#introduction)
-- [Features](#features)
 - [Target Audience](#target-audience)
 - [Design Decisions](#design-decisions)
 - [Deployment Procedure](#deployment-procedure)
@@ -18,13 +17,6 @@
 
 ## Introduction
 This web application implements the popular game "Rock-Paper-Scissors-Lizard-Spock". It allows users to play against the computer, providing an enjoyable and engaging experience.
-
-## Features
-- Allows users to choose from five options: rock, paper, scissors, lizard, or Spock.
-- Displays the computer's choice and the game result.
-- Tracks the score for both the player and the computer.
-- Provides a next round button to continue playing.
-- Offers a visually appealing interface with responsive design.
 
 ## Target Audience
 The target audience for this web application includes:
@@ -70,15 +62,16 @@ Rock Paper Scissors Lizard Spock (RPSLS) is a web-based game that offers a moder
 
 ## Features
 
-### Existing Features
-
 1. **Main Menu**
    - Allows users to navigate between different sections of the game, including gameplay and instructions.
    - Features a visually appealing design with intuitive navigation options.
 
 2. **Gameplay Page**
-   - Provides an interactive interface for players to make their choices.
-   - Displays player and computer choices, along with the outcome of each round.
+   - Provides an interactive interface for players to make their choices from five options: rock, paper, scissors, lizard, or Spock.
+   - Displays both player and computer choices, along with the outcome of each round.
+   - Tracks and displays the score for both the player and the computer.
+   - Includes a next round button to facilitate continuous play.
+
 
 3. **Endgame Page**
    - Displays a "Game Over" message at the end of each game.

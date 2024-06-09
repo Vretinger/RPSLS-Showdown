@@ -264,6 +264,59 @@ body {
     transform: translateX(-50%);
 }
 
+/* Modal background */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 4;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+  }
+
+  /* Modal Content/Box */
+.modal-content {
+    margin: 20% auto; /* 15% from the top and centered */
+    padding: 20px;
+    width: 25%;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 25px;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+
+  /* The Close Button */
+.modalButton {
+    margin-right: 20px;
+    margin-left: 60px;
+    font-family: 'Permanent Marker', cursive;
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #ffffff;
+    background-color: #ff4500;
+    border: none;
+    border-radius: 25px;
+    padding: 10px 30px;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  }
+  
+  .modalButton:hover {
+    transform: scale(1.1);
+  }
+
 /* Invisible SVG */
 .invisible-svg {
     position: absolute;

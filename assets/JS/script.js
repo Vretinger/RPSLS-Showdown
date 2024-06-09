@@ -7,6 +7,9 @@ const playSVG = document.getElementById('PlaySVG');
 const mainImage = document.getElementById('mainImage');
 const choices = ['Rock', 'Paper', 'Scissors', 'Lizard', 'Spock'];
 const nextRoundButton = document.getElementById('nextRoundButton');
+const yesButton = document.getElementById('yesButton');
+const closeButton = document.getElementById('closeButton');
+var modal = document.getElementById("myModal");
 // Game result logic dictionary
     const results = {
         Rock: {Scissors: 'crushes', Lizard: 'crushes'},
@@ -56,6 +59,27 @@ document.addEventListener('DOMContentLoaded', () => {
         playSVG.addEventListener('click', function() {
             window.location.href = 'gamePage.html';
         });
+    }
+
+    // Add click event listener to the confirm back button
+    if (yesButton) {
+        yesButton.addEventListener('click', function() {
+            window.location.href = 'index.html';
+        });
+    }
+
+    // Add click event listener to the close (No) button
+    if (closeButton) {
+        closeButton.addEventListener('click', function() {
+            modal.style.display = "none";
+        });
+    }
+  
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.style.display = "none";
+        }
     }
 
     // Functions to handle hover effects on choice options
@@ -119,12 +143,11 @@ document.addEventListener('DOMContentLoaded', () => {
     
     // Function to confirm the back navigation
     function confirmBack() {
+        console.log("back");
         if (window.location.pathname === "/instructions.html") {
             window.location.href = 'index.html';
         } else {
-            if (confirm("Are you sure you want to go back?")) {
-                window.location.href = 'index.html';
-            }
+            modal.style.display = "block";
         }
     }
 

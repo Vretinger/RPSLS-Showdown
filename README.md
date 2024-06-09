@@ -1,6 +1,6 @@
 # Rock-Paper-Scissors-Lizard-Spock Web Application
 
-<img src="assets/Images/RPSLSLogo.png" alt="RPSLS Logo" style="width: auto; max-width: 40%; height: auto;">
+<img src="assets/Images/RPSLS_Main_Logo.png" alt="RPSLS Logo" style="width: auto; max-width: 40%; height: auto;">
 
 
 
@@ -67,7 +67,7 @@ To deploy the web application, follow these steps:
 
 ## Game Description
 
-<img src="assets/Images/RPSLSInstructionHover.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">
+<img src="assets/Images/RPSLS_Instruction_Hover.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">
 
 
 Rock Paper Scissors Lizard Spock (RPSLS) is a web-based game that offers a modern twist on the classic game of Rock Paper Scissors. The game aims to provide entertainment for users of all ages, offering an engaging and interactive experience.
@@ -77,21 +77,25 @@ Rock Paper Scissors Lizard Spock (RPSLS) is a web-based game that offers a moder
 1. **Main Menu**
    - Allows users to navigate between different sections of the game, including gameplay and instructions.
    - Features a visually appealing design with intuitive navigation options.
+   <br><img src="assets/Images/RPSLS_Menu_Feature.jpg" alt="RPSLS image of main menu" style="width: auto; max-width: 30%; height: auto;">
 
 2. **Gameplay Page**
    - Provides an interactive interface for players to make their choices from five options: rock, paper, scissors, lizard, or Spock.
    - Displays both player and computer choices, along with the outcome of each round.
    - Tracks and displays the score for both the player and the computer.
    - Includes a next round button to facilitate continuous play.
+   <br><img src="assets/Images/RPSLS_Game_Feature.jpg" alt="RPSLS image of game page" style="width: auto; max-width: 30%; height: auto;">
 
 
 3. **Endgame Page**
    - Displays a "Game Over" message at the end of each game.
    - Allows users to restart the game or return to the main menu.
+   <br><img src="assets/Images/RPSLS_Endgame_Feature.png" alt="RPSLS image of end game page" style="width: auto; max-width: 30%; height: auto;">
 
 4. **Instructions Page**
    - Offers clear and concise instructions on how to play the game.
    - Includes visuals to aid users in understanding the rules and making their choices.
+   <br><img src="assets/Images/RPSLS_Instructions_Feature.png" alt="RPSLS image of instructions page" style="width: auto; max-width: 30%; height: auto;">
 
 ### Features Left to Implement
 

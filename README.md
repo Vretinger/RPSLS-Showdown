@@ -2,17 +2,16 @@
 
 <img src="assets/Images/RPSLS_Main_Logo.png" alt="RPSLS Logo" style="width: auto; max-width: 40%; height: auto;">
 
-
+The live link to the deployed game can be found [here](https://vretinger.github.io/RPSLS-Showdown/).
 
 ## Table of Contents
 - [Introduction](#introduction)
 - [UI and UX](#UI/UX)
 - [Design Decisions](#design-decisions)
-- [Deployment Procedure](#deployment-procedure)
 - [Game Description](#game-description)
 - [Features](#features)
+- [Deployment Procedure](#deployment-procedure)
 - [Testing](#testing)
-- [Deployment](#deployment)
 - [Credits](#credits)
 
 ## Introduction
@@ -38,32 +37,6 @@ The UI/UX design of this web application is crafted to resonate with a diverse a
 - **Game Logic**: Rooted in the strategic and competitive spirit of street culture, our game logic enforces a robust set of rules inspired by "Rock-Paper-Scissors-Lizard-Spock." By adhering to these established rules, players can engage in strategic decision-making and competitive play, enhancing the overall gaming experience while paying homage to the ingenuity and creativity of street artists.
 
 The fusion of street graffiti elements with intuitive design decisions and the distinctive "Permanent Marker" font creates a cohesive and immersive gaming environment that celebrates the vibrant and diverse culture of urban street art.
-
-
-
-
-
-<img src="assets/Images/RPSLSPreview.png" alt="RPSLS Logo" style="width: auto; max-width: 30%; height: auto;">
-
-## Deployment Procedure
-To deploy the web application, follow these steps:
-
-### Cloning the Repository
-1. Navigate to the repository's main page on GitHub.
-2. Click on the "Code" button.
-3. Copy the repository URL.
-4. Open a terminal and run `git clone [repository URL]`.
-
-### Forking the Repository
-1. Navigate to the repository's main page on GitHub.
-2. Click on the "Fork" button at the top right corner of the page.
-3. Follow the prompts to fork the repository to your GitHub account.
-
-### Running Locally
-1. Clone the repository to your local machine.
-2. Ensure you have a modern web browser installed.
-3. Open the `index.html` file in your web browser.
-4. Start playing and enjoy the game!
 
 ## Game Description
 
@@ -103,6 +76,27 @@ Rock Paper Scissors Lizard Spock (RPSLS) is a web-based game that offers a moder
 - **Customizable Settings**: Enable users to adjust game parameters such as difficulty level and game duration.
 - **Leaderboard**: Implement a feature to track high scores and display them on the main menu.
 
+
+## Deployment Procedure
+To deploy the web application, follow these steps:
+
+### Cloning the Repository
+1. Navigate to the repository's main page on GitHub.
+2. Click on the "Code" button.
+3. Copy the repository URL.
+4. Open a terminal and run `git clone [repository URL]`.
+
+### Forking the Repository
+1. Navigate to the repository's main page on GitHub.
+2. Click on the "Fork" button at the top right corner of the page.
+3. Follow the prompts to fork the repository to your GitHub account.
+
+### Running Locally
+1. Clone the repository to your local machine.
+2. Ensure you have a modern web browser installed.
+3. Open the `index.html` file in your web browser.
+4. Start playing and enjoy the game!
+
 ## Testing
 
 The game has undergone extensive testing to ensure functionality across different browsers and devices.
@@ -128,15 +122,6 @@ The game has undergone extensive testing to ensure functionality across differen
 ### Unfixed Bugs
 
 No major bugs were discovered during testing. Minor issues related to styling may be present on certain screen sizes, which will be addressed in future updates.
-
-## Deployment
-
-The game was deployed to a hosting platform (e.g., GitHub Pages) using the following steps:
-
-1. Navigate to the GitHub repository's Settings tab.
-2. From the source section drop-down menu, select the Master Branch.
-3. The page will be automatically refreshed to indicate successful deployment.
-4. The live link to the deployed game can be found [here](https://vretinger.github.io/RPSLS-Showdown/).
 
 ## Credits
 
